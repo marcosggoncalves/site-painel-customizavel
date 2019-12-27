@@ -6,7 +6,7 @@
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/variaveis.css">
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?=$artigo[0]['descricao_artigo']?>">
+    <meta name="description" content="<?=$artigo[0]['titulo']?>">
     <meta name="keywords" content="<?=$artigo[0]['titulo']?>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
