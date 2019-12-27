@@ -135,7 +135,32 @@
                         <?=$site['Contato']['desc_page']?>
                     </div>
                     <div class="fale-conosco">
-                        <form action="/fale-conosco/contato" method="post">
+                      <?php
+                        $session = \Config\Services::session();
+                        if($session->getFlashdata('save')):
+                            if($session->getFlashdata('save')['status'] == true) :?>
+                                <div class="success">
+                                    <h4><i class="icon fa fa-ban"></i>Mensagem enviada !</h4>
+                                    <?php
+                                        echo $session->getFlashdata('save')['message'];
+                                    ?>
+                                    <div>
+                                        <?php print_r($session->getFlashdata('save')['validate'])?>
+                                    </div>
+                                </div>
+                            <?php else:?>
+                            <div class="alert">
+                                <h4><i class="icon fa fa-ban"></i>Falha encontrada !</h4>
+                                <?php
+                                    echo $session->getFlashdata('save')['message'];
+                                ?>
+                                <div>
+                                    <?php print_r($session->getFlashdata('save')['validate'])?>
+                                </div>
+                            </div>
+                            <?php endif ?>
+                         <?php endif ?>
+                        <form action="/fale-conosco" method="post">
                             <div class="container-input">
                                 <input type="text" placeholder="Nome" name="nome">
                             </div>

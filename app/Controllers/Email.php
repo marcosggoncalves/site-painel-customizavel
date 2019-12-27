@@ -8,6 +8,27 @@ use CodeIgniter\Controller;
 class Email extends BaseController
 {
     public function enviar(){
+        $validation = \Config\Services::validation();
+
+		$validate = $this->validate([
+			'nome'  => 'required',
+            'telefone'  => 'required',
+            'email'  => 'required',
+			'mensagem'  => 'required'
+		]);
+		
+		if(!$validate){
+			$data = [
+				'validate'=>$this->validator->listErrors(),
+				'status'=>false,
+				'message'=>'Não foi possivel enviar e-mail.'
+			];
+	
+			$this->session->setFlashdata('save', $data);
+			return redirect()->to('/#fale-conosco');
+        }
+        
+        
         $email = [
             'emailEnvio'=>'marcoslopesg7@gmail.com',
             'nome'=>$this->request->getVar('nome'),

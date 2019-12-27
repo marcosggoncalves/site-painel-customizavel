@@ -321,6 +321,23 @@
         flex-direction: column;
     }
     
+    .success,
+    .alert {
+        background: #cc0000;
+        padding: 20px 20px;
+        color: var(--color-font-2);
+        margin-bottom: 1rem;
+    }
+    
+    .success {
+        background: #008000;
+    }
+    
+    .success li,
+    .alert li {
+        list-style: none;
+    }
+    
     @media screen and (min-width:720px) {
         * {
             font-size: initial;
