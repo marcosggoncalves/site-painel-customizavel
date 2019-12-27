@@ -6,6 +6,18 @@
     </title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?php include('templates/head.inc.php');?>
+    <style>
+        html,
+        body{
+            background:#1A628A;
+        }
+        .login-page{
+            background:unset;
+        }
+        .login-logo a{
+            color:#ffff;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
