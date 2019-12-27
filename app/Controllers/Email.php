@@ -53,12 +53,12 @@ class Email extends BaseController
                     'mensagem'=> "Obrigado por entrar em contato, entraremos em contato em breve, pelo telefone {$email["telefone"]} Mensagem: {$email["mensagem"]}"
                 ]
             );
-			return redirect('/');
+			return redirect()->to('/#fale-conosco');
         }else{
             $data['status'] = false;
             $data['message'] = 'Não foi possivel enviar mensagem, tente novamente.';
             $this->session->setFlashdata('save', $data);
-			return redirect('/');
+			return redirect()->to('/#fale-conosco');
         }
     }
     private function enviarEmail($email){
