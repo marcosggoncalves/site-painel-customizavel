@@ -50,7 +50,7 @@ class Email extends BaseController
                     'nome'=>'Contato com empresa',
                     'telefone'=>'(67) 99834 - 3255',
                     'email'=>'marcoslopesg7@gmail.com',
-                    'mensagem'=> "Obrigado por entrar em contato, entraremos em contato em breve, pelo telefone {$email["telefone"]} Mensagem: {$email["mensagem"]}"
+                    'mensagem'=> "Obrigado por entrar em contato, entraremos em contato em breve, pelo telefone {$email["telefone"]} referente: {$email["mensagem"]}"
                 ]
             );
 			return redirect()->to('/#fale-conosco');

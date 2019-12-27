@@ -41,7 +41,7 @@
                 <li><a href="/painel-depoimentos"><i class="fa fa-users"></i> <span>Depoimentos</span></a></li>
                 <li><a href="/painel-servicos"><i class="fa fa-wrench"></i> <span>Serviços</span></a></li>
                 <li><a href="/painel-artigos"><i class="fa fa-book"></i> <span>Artigos</span></a></li>
-                <li class="bg-red color-palette text-white"><a href="/encerrar-painel"><i class="fa fa-close"></i> <span>Encerra Sessão</span></a></li>
+                <li class="bg-red color-palette text-white"><a href="/encerrar-painel"><i class="fa fa-close"></i> <span>Encerrar Sessão</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->
