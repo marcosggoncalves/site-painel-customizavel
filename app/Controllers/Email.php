@@ -39,7 +39,7 @@ class Email extends BaseController
 
         $data = [
             'status'=>true,
-            'message'=>'Mensagem enviada com sucesso, Aguarde nosso contato'
+            'message'=>'Mensagem enviada com sucesso, Aguarde nosso contato.'
         ];
 
         if($this->enviarEmail($email)){
@@ -56,7 +56,7 @@ class Email extends BaseController
 			return redirect('/');
         }else{
             $data['status'] = false;
-            $data['message'] = 'Não foi possivel enviar mensagem, tente novamente';
+            $data['message'] = 'Não foi possivel enviar mensagem, tente novamente.';
             $this->session->setFlashdata('save', $data);
 			return redirect('/');
         }
@@ -64,13 +64,11 @@ class Email extends BaseController
     private function enviarEmail($email){
         
         $emailEnvio = $email['emailEnvio'];
-        $headers  = "MIME-Version: 1.0". "\r\n";
-        $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
-        $headers .= "From: {$email["nome"]} <{$email["nome"]}>";
+        $headers.= "From: {$email["email"]} <{$email["email"]}>";
 
-        $envio = mail( $email['emailEnvio'], $email["mensagem"], $headers);
+        $envio = mail($email['emailEnvio'],'Contato com nosso equipe !',$email["mensagem"], $headers);
 
-        if($enviaremail){
+        if($envio){
             return true;
         }else{
             return false;
