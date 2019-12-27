@@ -36,7 +36,7 @@
                         <li><a href="/personalizar?page=Contato"><i class="fa fa-circle-o"></i>Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li><a href="/"><i class="fa fa-home"></i> <span>Visualizar Site</span></a></li>
+                <li><a href="/" target="_Seft"><i class="fa fa-home"></i> <span>Visualizar Site</span></a></li>
                 <li><a href="/painel-usuarios"><i class="fa fa-users"></i> <span>Usuários</span></a></li>
                 <li><a href="/painel-depoimentos"><i class="fa fa-users"></i> <span>Depoimentos</span></a></li>
                 <li><a href="/painel-servicos"><i class="fa fa-wrench"></i> <span>Serviços</span></a></li>

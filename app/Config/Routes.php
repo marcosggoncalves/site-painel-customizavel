@@ -81,6 +81,7 @@ $routes->get('/painel-depoimentos', 'Depoimentos::index');
 $routes->get('/painel-servicos', 'Servicos::index');
 $routes->get('/painel-usuarios', 'Usuarios::index');
 $routes->get('/encerrar-painel', 'Admin::sair');
+$routes->post('/fale-conosco/contato','Email::enviar');
 
 // pages
 

@@ -135,7 +135,7 @@
                         <?=$site['Contato']['desc_page']?>
                     </div>
                     <div class="fale-conosco">
-                        <form action="">
+                        <form action="/fale-conosco/contato" method="post">
                             <div class="container-input">
                                 <input type="text" placeholder="Nome" name="nome">
                             </div>
@@ -143,7 +143,7 @@
                                 <input type="text" placeholder="Telefone" name="telefone">
                             </div>
                             <div class="container-input">
-                                <input type="email" placeholder="E-mail" name="E-mail">
+                                <input type="email" placeholder="E-mail" name="email">
                             </div>
                             <div class="container-input">
                                 <textarea type='text' placeholder="Escreva sua mensagem" name="mensagem"></textarea>

@@ -27,26 +27,7 @@ class Home extends BaseController
 			'site'=>$this->formatArray($pages),
 			'titulo' => 'Site institucional'
 		];
-
-		// $email = \Config\Services::email();
-		// $email->protocol =  'smtp';
-		// $email->smtp_host = 'smtp.gmail.com';
-		// $email->smtp_port = 25;
-		// $email->smtp_user = 'marcoslopes5687@gmail.com';
-		// $email->smtp_pass = '99510796';
-		// $email->mailtype = 'html';
-
-		// $email->setFrom('marcoslopes5687@gmail.com', 'Your Name');
-		// $email->setTo('marcoslopes5687@gmail.com');
-		// $email->setCC('marcoslopes5687@gmail.com');
-		// $email->setBCC('marcoslopes5687@gmail.com');
-
-		// $email->setSubject('Email Test');
-		// $email->setMessage('Testing the email class.');
-
-		// if (!$email->send()){
-		// 	echo $email->printDebugger();
-		// }
+		
 		return view('home',$data);
 
 	}
@@ -88,8 +69,5 @@ class Home extends BaseController
 		];
 		
 		return view('artigos',$data);
-	}
-	public function findArtigos(){
-		
 	}
 }

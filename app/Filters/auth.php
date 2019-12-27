@@ -10,6 +10,7 @@ class Auth implements FilterInterface
     {
         // Do something here
         $this->session = \Config\Services::session();
+        
         $data = [
             'status'=>false,
             'message'=> 'Nenhuma sessão encontrada, por favor, acesse o painelSite.'
