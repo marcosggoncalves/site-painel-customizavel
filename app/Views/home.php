@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title><?=$titulo?></title>
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="siteStyle/css/variaveis.css">
@@ -12,6 +13,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<?=$titulo?>">
+    <meta name="keywords" content="Tecnologia, Soluções, Soluções Digitais, Marketing Digital, Digital ">
+    <meta name="robots" content="index">
 </head>
 
 <body>
@@ -120,7 +124,7 @@
                                     <h1><?=$artigo['titulo']?></h1>
                                 </div>
                                 <div class="ler-mais">
-                                    <a href="artigo/<?=$artigo['id_artigo']?>" class="ler-mais">Ver mais >></a>
+                                    <a href="artigos/<?=$artigo['slug']?>" class="ler-mais">Ver mais >></a>
                                 </div>
                             </div>
                         <?php endforeach?>

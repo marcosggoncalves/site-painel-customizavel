@@ -2,13 +2,14 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title><?=$titulo?></title>
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/variaveis.css">
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$artigo[0]['titulo']?>">
-    <meta name="keywords" content="<?=$artigo[0]['titulo']?>">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Artigos, Soluções, Soluções Digitais ">
+    <meta name="robots" content="index">
 </head>
 
 <body>
@@ -49,14 +50,14 @@
         <section class="artigos">
             <?php foreach($artigos as $artigo): ?>
                 <div class="card ">
-                    <div class="card-titulo">
-                        <h1><?=$artigo['titulo']?></h1>
-                    </div>
                     <div class="card-corpo" >
                         <img src="<?=$artigo['img_artigo']?>" />
                     </div>
+                    <div class="card-titulo">
+                        <h1><?=$artigo['titulo']?></h1>
+                    </div>
                     <div class="ler-mais">
-                        <a href="artigo/<?=$artigo['id_artigo']?>" class="ler-mais">Ver mais >></a>
+                        <a href="artigos/<?=$artigo['slug']?>" class="ler-mais">Ver mais >></a>
                     </div>
                 </div>
             <?php endforeach?>

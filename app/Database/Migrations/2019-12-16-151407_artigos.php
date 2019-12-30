@@ -20,7 +20,20 @@ class Artigos extends Migration
 				'type'=> 'VARCHAR',
 				'constraint'=> '100'
 			],
-			'descricao_artigo'=>[
+			'previa_artigo'=>[
+				'type'=>'VARCHAR',
+				'constraint'=>'200'
+			],
+			'publicacao_artigo'=>[
+				'type'=>'TEXT'
+			],
+			'autor_artigo'=>[
+				'type'=>'TEXT'
+			],
+			'palavras_chaves_artigos'=>[
+				'type'=>'TEXT'
+			],
+			'slug'=>[
 				'type'=>'TEXT'
 			]
 		]);

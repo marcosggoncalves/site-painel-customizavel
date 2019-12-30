@@ -74,7 +74,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->get('/', 'Home::index');
-$routes->get('/artigo/(:num)','Home::view/$1');
+$routes->get('/artigos/(:segment)','Home::view/$1');
 $routes->get('/artigos','Home::artigos');
 $routes->get('/painel', 'Admin::index');
 $routes->get('/painel-depoimentos', 'Depoimentos::index');

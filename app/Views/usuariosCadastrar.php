@@ -32,6 +32,10 @@
                                     <input type="text" class="form-control" id="email" name="email" placeholder="Email usuário">
                                 </div>
                                 <div class="form-group">
+                                    <label for="setor">Setor:</label>
+                                    <input type="text" class="form-control" id="setor" name="setor" placeholder="Setor usuário">
+                                </div>
+                                <div class="form-group">
                                     <label for="senha">Senha:</label>
                                     <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha usuário">
                                 </div>
@@ -52,6 +56,7 @@
                                     <th class='text-center'>#</th>
                                     <th class='text-center'>Usuário</th>
                                     <th class='text-center'>Email</th>
+                                    <th class='text-center'>Setor</th>
                                     <th class='text-center'>Postado</th>
                                     <th>Action</th>
                                 </tr>
@@ -66,6 +71,9 @@
                                     </td>
                                     <td class='text-center'>
                                         <?=$usuario['email']?>
+                                    </td>
+                                    <td class='text-center'>
+                                        <?=$usuario['setor']?>
                                     </td>
                                     <td class='text-center'>
                                         <?=$usuario['created']?>
@@ -116,6 +124,10 @@
                                                                     <input type="text" class="form-control" id="email-edit" name="email-edit" placeholder="Email usuário" value="<?=$usuario['email']?>">
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="setor-edit">Setor:</label>
+                                                                    <input type="text" class="form-control" id="setor-edit" name="setor-edit" placeholder="Setor usuário" value="<?=$usuario['setor']?>">
+                                                                </div>
+                                                                <div class="form-group">
                                                                     <label for="senha-edit">Senha:</label>
                                                                     <input type="password" class="form-control" id="senha-edit" name="senha-edit" placeholder="Senha usuário">
                                                                 </div>
@@ -140,4 +152,4 @@
     <?php include('templates/scripts.inc.php');?>
 </body>
 
-</html>>
+</html>

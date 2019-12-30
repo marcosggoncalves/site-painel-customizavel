@@ -27,7 +27,8 @@ class Usuarios extends BaseController
 		$validate = $this->validate([
 			'usuario'  => 'required',
             'email'  => 'required',
-            'senha'  => 'required',
+			'senha'  => 'required',
+			'setor' => 'required'
 		]);
 		
 		if(!$validate){
@@ -51,7 +52,8 @@ class Usuarios extends BaseController
 			$usuario = [
 				'usuario'=>$this->request->getVar('usuario'),
                 'email'=> $this->request->getVar('email'),
-                'senha'=> md5($this->request->getVar('senha'))
+				'senha'=> md5($this->request->getVar('senha')),
+				'setor'=> $this->request->getVar('setor'),
 			];
 
 			$save = $this->model->newUsuario($usuario);
@@ -89,7 +91,8 @@ class Usuarios extends BaseController
 		$validate = $this->validate([
 			'usuario-edit'  => 'required',
             'email-edit'  => 'required',
-            'senha-edit'  => 'required',
+			'senha-edit'  => 'required',
+			'setor-edit' => 'required'
 		]);
 		
 		if(!$validate){
@@ -106,7 +109,8 @@ class Usuarios extends BaseController
 		$usuario = [
             'usuario'=>$this->request->getVar('usuario-edit'),
             'email'=> $this->request->getVar('email-edit'),
-            'senha'=> md5($this->request->getVar('senha-edit'))
+			'senha'=> md5($this->request->getVar('senha-edit')),
+			'setor'=> $this->request->getVar('setor-edit')
         ];
 
 		$data = [

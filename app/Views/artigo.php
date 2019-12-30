@@ -3,12 +3,14 @@
 
 <head>
     <title><?=$titulo?></title>
+    <meta charset="UTF-8">
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/variaveis.css">
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?=$artigo[0]['descricao_artigo']?>">
-    <meta name="keywords" content="<?=$artigo[0]['titulo']?>">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="<?=$artigo[0]['previa_artigo']?>">
+    <meta name="robots" content="index">
+    <meta name="author" content="<?=$artigo[0]['autor_artigo']?>">
+    <meta name="keywords" content="<?=$artigo[0]['palavras_chaves_artigo']?>">
 </head>
 
 <body>
@@ -43,16 +45,16 @@
     <main class="postagem">
         <section class='postagem-artigo container'>
             <div class="titulo-postagem">
-             <?=$artigo[0]['titulo']?>
+             <h1><?=$artigo[0]['titulo']?></h1>
           </div>
           <div class="desc-postagem">
             <figure>
                 <img src="../<?=$artigo[0]['img_artigo']?>" alt="">
             </figure>
-            <?=$artigo[0]['descricao_artigo']?>
+            <?=$artigo[0]['publicacao_artigo']?>
 
             <div class="postagem-created">
-                <p>Postado: <?=$artigo[0]['created']?></p>
+                <p><em><?=$artigo[0]['autor_artigo']?> - <?= date_format(date_create($artigo[0]['created']),"Y/m/d H:i:s")?></em></p>
             </div>
           </div>
         </section>

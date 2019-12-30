@@ -34,13 +34,13 @@ class Home extends BaseController
 		return view('home',$data);
 
 	}
-	public function view($id)
+	public function view($slug)
 	{
-		$artigo = $this->Artigos->getArtigo($id);
+		$artigo = $this->Artigos->getArtigo(urldecode($slug));
 		$pages = $this->pages->pages();
 
 		if(count($artigo) == 0){
-			return redirect('/');
+			return redirect()->to('/artigos');
 		}
 
 		$data = [
@@ -65,7 +65,7 @@ class Home extends BaseController
 		$pager = \Config\Services::pager();
 
 		$data = [
-			'artigos'=> $this->Artigos->paginate(12,'list'),
+			'artigos'=> $this->Artigos->paginate(6,'list'),
 			'site'=>$this->formatArray($pages),
 			'titulo' => 'Artigos publicados | Soluções Digitais',
 			'pager' => $this->Artigos->pager

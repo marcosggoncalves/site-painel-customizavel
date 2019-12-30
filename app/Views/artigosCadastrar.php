@@ -6,6 +6,8 @@
         <?=$titulo?>
     </title>
     <?php include('templates/head.inc.php');?>
+    <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+    <?php include('templates/scripts.inc.php');?>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -13,7 +15,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Novo Artigo
+                Publicar Artigo
             </h1>
         </section>
         <section class="content">
@@ -24,16 +26,28 @@
                         <form action="/painel-artigos-cadastrar" method="post" enctype="multipart/form-data">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="nome"> Titulo:</label>
-                                    <input type="nome" class="form-control" id="titulo" name="titulo" placeholder="Titulo Artigo">
+                                    <label>Imagem Artigo:</label>
+                                    <input type="file" class="form-control" id="imagem-artigo" name="imagem-artigo">
                                 </div>
                                 <div class="form-group">
-                                    <label>Descrição</label>
+                                    <label for="nome"> Titulo:</label>
+                                    <input type="nome" class="form-control" id="titulo" name="titulo" placeholder="Titulação artigo">
+                                </div>
+                                <div class="form-group">
+                                    <label>Prévia - resumo: <em><b>apenas 200 caracteres.</b></em></label>
+                                    <textarea class="form-control" id="previa" name="previa" rows="5" cols="80" maxlength="200" placeholder="Descrição serviço"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descrição:</label>
                                     <textarea class="form-control" id="descrição" name="descrição" rows="10" cols="80" placeholder="Descrição serviço"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Imagem Artigo</label>
-                                    <input type="file" class="form-control" id="imagem-artigo" name="imagem-artigo">
+                                    <label for="palavras-chaves"> Palavras Chaves:</label>
+                                    <input type="nome" class="form-control" id="palavras-chaves" name="palavras-chaves" placeholder="Palavras chaves: Tecnologia, Informática, Matemática">
+                                </div>
+                                <div class="form-group">
+                                    <label for="autor"> Autor:</label>
+                                    <textarea type="autor" class="form-control" id="autor" name="autor" placeholder="Autor"><?=$autor?></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Publicar Artigo</button>
                             </div>
@@ -110,12 +124,20 @@
                                                                 <div class="form-group">
                                                                     <label>Descrição</label>
                                                                     <textarea class="form-control" id="descrição-edit<?=$artigo['id_artigo']?>" name="descrição-edit<?=$artigo['id_artigo']?>" rows="10" cols="80" placeholder="Descrição serviço">
-                                                                    <?=$artigo['descricao_artigo']?>
+                                                                    <?=$artigo['publicacao_artigo']?>
                                                                     </textarea>
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label>Prévia - resumo: <em><b>apenas 200 caracteres.</b></em></label>
+                                                                    <textarea class="form-control" id="previa-edit" name="previa-edit" rows="5" cols="80" maxlength="200" placeholder="Descrição serviço"><?=$artigo['previa_artigo']?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="palavras-chaves-edit"> Palavras Chaves:</label>
+                                                                    <input type="text" class="form-control" id="palavras-chaves-edit" name="palavras-chaves-edit" placeholder="Palavras chaves: Tecnologia, Informática, Matemática" value="<?=$artigo['palavras_chaves_artigos']?>">
+                                                                </div>
+                                                                <div class="form-group">
                                                                     <label>Imagem Artigo - apenas edição</label>
-                                                                    <input type="file" class="form-control" id="imagem-artigo-edit" name="imagem-artigo-edit"/>
+                                                                    <input type="file" class="form-control" id="imagem-artigo-edit" name="imagem-artigo-edit" />
 
                                                                     <div style="margin-top:2rem;">
                                                                         <div>
@@ -144,7 +166,7 @@
                                                         </div>
                                                         <div style="margin-top:2rem;">
                                                             <p>
-                                                                <?=$artigo['descricao_artigo']?>
+                                                                <?=$artigo['publicacao_artigo']?>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -155,25 +177,22 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <script>
+                                    $(function() {
+                                        CKEDITOR.replace("descrição-edit<?=$artigo['id_artigo']?>");
+                                    });
+                                </script>
                                 <?php endforeach ?>
                             </table>
                         </div>
                     </div>
                 </div>
-        </section>s
+        </section>
         </div>
         <?php include('templates/footer.inc.php');?>
     </div>
-    <?php include('templates/scripts.inc.php');?>
 </body>
-<?php foreach($artigos as $artigo): ?>
-    <script>
-        $(function() {
-            CKEDITOR.replace('descrição-edit<?=$artigo['id_artigo']?>');
-        });
-    </script>
-<?php endforeach ?>
-<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+
 <script src="adminLTE/plugins/bootstrap3-wysihtml5.all.min.js"></script>
 <script>
     $(function() {

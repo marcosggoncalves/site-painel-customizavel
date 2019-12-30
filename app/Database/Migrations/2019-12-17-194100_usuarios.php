@@ -24,6 +24,10 @@ class Usuarios extends Migration
 			'senha'=> [
 				'type'=> 'VARCHAR',
 				'constraint'=> '100'
+			],
+			'setor'=> [
+				'type'=> 'VARCHAR',
+				'constraint'=> '300'
 			]
 		]);
 		$this->forge->addField("created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP");

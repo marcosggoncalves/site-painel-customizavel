@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class ArtigosModel extends Model
 {
     protected $table = 'artigos';
-    protected $allowedFields = ['img_artigo', 'titulo', 'descricao_artigo'];
+    protected $allowedFields = ['img_artigo','titulo','previa_artigo','publicacao_artigo','autor_artigo','palavras_chaves_artigos','slug'];
 	
 	public function getArtigos()
     {
@@ -25,7 +25,11 @@ class ArtigosModel extends Model
         $this->where('id_artigo',$id);
         return $this->delete();
     }
-    public function getArtigo($id)
+    public function getArtigo($slug)
+    {
+        return $this->where('slug', $slug)->findAll();
+    }
+    public function getArtigoEdit($id)
     {
         return $this->where('id_artigo', $id)->findAll();
     }

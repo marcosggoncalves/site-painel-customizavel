@@ -89,7 +89,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        padding: 5rem 1rem;
     }
     
     .banner-container img {
@@ -128,7 +127,8 @@
     }
     
     .container-titulo p {
-        font-size: 1.2rem;
+        margin-top: 1rem;
+        font-size: 1rem;
         color: var(--color-font-1);
     }
     
@@ -227,9 +227,9 @@
     
     .container-input input,
     .container-input textarea {
-        padding: 12px 20px;
+        padding: 8px 20px;
         border: 1px solid #dddddd;
-        border-radius: 20px;
+        border-radius: 5px;
     }
     
     .container-input textarea {
@@ -284,13 +284,19 @@
         margin-top: 2rem;
     }
     
+    .postagem p {
+        margin-top: 1rem;
+    }
+    
     .titulo-postagem {
         text-align: center;
         font-weight: bold;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        line-height: 4rem;
-        font-size: 1.6rem;
+    }
+    
+    .titulo-postagem h1 {
+        font-size: 1.4rem;
     }
     
     .desc-postagem {

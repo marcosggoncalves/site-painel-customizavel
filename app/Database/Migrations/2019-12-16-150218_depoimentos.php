@@ -13,7 +13,7 @@ class Depoimentos extends Migration
 				'unsigned'=>true,
 				'auto_increment'=>true
 			],
-			'cliente_depoimento '=> [
+			'cliente_depoimento'=> [
 				'type'=> 'VARCHAR',
 				'constraint'=> '150'
 			],

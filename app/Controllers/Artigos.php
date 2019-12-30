@@ -16,7 +16,8 @@ class Artigos extends BaseController
 	{
 		$data = [
 			'artigos'=> $this->model->getArtigos(),
-			'titulo' => 'Artigos - painelSite'
+			'titulo' => 'Artigos - painelSite',
+			'autor'=>"Publicado por: {$this->session->get('login')['user'][0]['usuario']}  - {$this->session->get('login')['user'][0]['setor']} "
 		];
 
 		return view('artigosCadastrar',$data);
@@ -29,7 +30,10 @@ class Artigos extends BaseController
 
 		$validate = $this->validate([
 			'titulo'  => 'required',
+			'previa'=>'required',
 			'descrição'  => 'required',
+			'palavras-chaves'=>'required',
+			'autor'=>'required',
 			'imagem-artigo' => [
                 'uploaded[imagem-artigo]',
                 'mime_in[imagem-artigo,image/jpg,image/jpeg,image/gif,image/png]',
@@ -56,13 +60,18 @@ class Artigos extends BaseController
 				'message'=>'Não foi possivel publicar artigo !'
 			];
 			
-			$session = \Config\Services::session($config);
+			$slug = url_title($this->request->getVar('titulo'),'-', TRUE);
 
 			$artigo = [
 				'img_artigo' => 'uploads/'.$artigoImg->getName(),
-				'titulo'  => $this->request->getVar('titulo'),
-				'descricao_artigo'  => $this->request->getVar('descrição'),
+				'titulo' => $this->request->getVar('titulo'),
+				'publicacao_artigo' => $this->request->getVar('descrição'),
+				'previa_artigo'  => $this->request->getVar('previa'),
+				'palavras_chaves_artigos' => $this->request->getVar('palavras-chaves'),
+				'autor_artigo'=> $this->request->getVar('autor'),
+				'slug'=> $slug
 			];
+			
 
 			$save = $this->model->newArtigo($artigo);
 
@@ -99,11 +108,13 @@ class Artigos extends BaseController
 	}
 	public function edit($id)
 	{
-		$artigo = $this->model->getArtigo($id);
+		$artigo = $this->model->getArtigoEdit($id);
 
 		$validate = $this->validate([
 			"titulo-edit"  => "required",
-			"descrição-edit{$artigo[0]['id_artigo']}"  => "required"
+			"descrição-edit{$artigo[0]['id_artigo']}"  => "required",
+			"previa-edit"=> "required",
+			"palavras-chaves-edit"=>"required"
 		]);
 		
 		if(!$validate){
@@ -116,9 +127,15 @@ class Artigos extends BaseController
 			return redirect('painel-artigos');
 		}
 
+		
+		$slug = url_title($this->request->getVar('titulo-edit'), '-', TRUE);
+
 		$artigoEdit = [
 			'titulo'  => $this->request->getVar('titulo-edit'),
-			'descricao_artigo'  => $this->request->getVar("descrição-edit{$artigo[0]['id_artigo']}"),
+			'publicacao_artigo'  => $this->request->getVar("descrição-edit{$artigo[0]['id_artigo']}"),
+			'previa_artigo'  => $this->request->getVar('previa-edit'),
+			'palavras_chaves_artigos' => $this->request->getVar('palavras-chaves-edit'),
+			'slug'=>$slug
 		];
 
 		$data = [
