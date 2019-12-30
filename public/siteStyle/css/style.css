@@ -123,7 +123,7 @@
     }
     
     .container-titulo h1 {
-        font-size: var( --size-font-titulos);
+        font-size: var(--size-font-titulos-container);
         color: var(--color-banner);
     }
     
