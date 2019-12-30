@@ -15,7 +15,7 @@ class Usuarios extends BaseController
 	{
 		$data = [
 			'usuarios'=> $this->model->getUsuarios(),
-			'titulo' => 'Usuários - site institucional'
+			'titulo' => 'Usuários - painelSite'
 		];
 
 		return view('usuariosCadastrar',$data);

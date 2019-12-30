@@ -109,6 +109,8 @@
     .banner-container-texto div h1 {
         text-align: center;
         font-size: 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
     
     .banner-container-texto p {
@@ -117,7 +119,7 @@
     
     .container-titulo {
         text-align: justify;
-        padding: 40px 20px;
+        padding: 20px 20px;
     }
     
     .container-titulo h1 {
@@ -126,7 +128,7 @@
     }
     
     .container-titulo p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: var(--color-font-1);
     }
     
@@ -209,14 +211,8 @@
         color: var(--color-font-2);
     }
     
-    #fale-conosco .container-titulo h1,
-    #fale-conosco .container-titulo p {
-        color: var(--color-banner);
-    }
-    
     .fale-conosco {
         padding: 20px 20px;
-        padding-bottom: 3rem;
     }
     
     .container-input {
@@ -233,6 +229,7 @@
     .container-input textarea {
         padding: 12px 20px;
         border: 1px solid #dddddd;
+        border-radius: 20px;
     }
     
     .container-input textarea {
@@ -256,6 +253,24 @@
     .footer p {
         color: var(--color-font-1);
         text-align: center;
+    }
+    
+    .redes-sociais {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .redes-sociais ul {
+        display: flex;
+    }
+    
+    .redes-sociais i {
+        font-size: 2rem;
+        color: var(--color-banner);
+    }
+    
+    .redes-sociais ul li {
+        list-style: none;
     }
     
     .postagem-artigo {
@@ -323,7 +338,7 @@
     
     .success,
     .alert {
-        background: #cc0000;
+        background: #ec2323;
         padding: 20px 20px;
         color: var(--color-font-2);
         margin-bottom: 1rem;
@@ -373,6 +388,10 @@
         }
         .banner-container-texto {
             width: 50%;
+        }
+        .banner-container-texto div h1 {
+            margin-bottom: 0.5rem;
+            margin-top: unset;
         }
         .card {
             padding: 20px 20px;

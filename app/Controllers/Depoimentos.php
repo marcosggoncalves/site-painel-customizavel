@@ -14,7 +14,7 @@ class Depoimentos extends BaseController
 	{
 		$data = [
 			'depoimentos'=> $this->model->getDepoimentos(),
-			'titulo' => 'Depoimentos - site institucional'
+			'titulo' => 'Depoimentos - painelSite'
 		];
 
 		return view('depoimentoCadastrar',$data);

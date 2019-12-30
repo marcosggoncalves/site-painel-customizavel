@@ -23,7 +23,7 @@ class Pages extends BaseController
             return redirect('painel');
 		}
     
-        $data['titulo'] = 'Editar página';
+        $data['titulo'] = 'Editar página - painelSite';
         $data['pageInputs'] = $findTable;
 
         return view('pagesModificar',$data);

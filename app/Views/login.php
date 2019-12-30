@@ -37,7 +37,9 @@
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
-                    <div class="col-xs-8"></div>
+                    <div class="col-xs-8">
+                        <a href="/">Voltar para site</a>
+                    </div>
                     <div class="col-xs-4">
                         <button type="submit" class="btn btn-success btn-block btn-flat"><i class="fa fa-fw fa-check"></i>Entrar</button>
                     </div>

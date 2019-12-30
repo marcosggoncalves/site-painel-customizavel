@@ -16,7 +16,7 @@ class Artigos extends BaseController
 	{
 		$data = [
 			'artigos'=> $this->model->getArtigos(),
-			'titulo' => 'Artigos- site institucional'
+			'titulo' => 'Artigos - painelSite'
 		];
 
 		return view('artigosCadastrar',$data);

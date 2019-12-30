@@ -3,6 +3,7 @@ use App\Models\DepoimentosModel;
 use App\Models\ServicosModel;
 use App\Models\ArtigosModel;
 use App\Models\PagesModel;
+use App\Models\RedesModel;
 use CodeIgniter\Controller;
 
 class Home extends BaseController
@@ -15,6 +16,7 @@ class Home extends BaseController
 		$this->Servicos = new ServicosModel();
 		$this->Depoimentos = new DepoimentosModel();
 		$this->pages = new PagesModel();
+		$this->redes = new RedesModel();
 	}
 	public function index()
 	{
@@ -25,7 +27,8 @@ class Home extends BaseController
 			'servicos'=> $this->Servicos->getServicos(),
 			'depoimentos'=> $this->Depoimentos->getDepoimentos(),
 			'site'=>$this->formatArray($pages),
-			'titulo' => 'Site institucional'
+			'redes'=>$this->redes->getRedesSocias(),
+			'titulo' => 'Soluções Digitais'
 		];
 		
 		return view('home',$data);
@@ -64,7 +67,7 @@ class Home extends BaseController
 		$data = [
 			'artigos'=> $this->Artigos->paginate(12,'list'),
 			'site'=>$this->formatArray($pages),
-			'titulo' => 'Artigos publicados',
+			'titulo' => 'Artigos publicados | Soluções Digitais',
 			'pager' => $this->Artigos->pager
 		];
 		

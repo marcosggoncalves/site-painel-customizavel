@@ -35,7 +35,7 @@
                                     <label>Imagem Artigo</label>
                                     <input type="file" class="form-control" id="imagem-artigo" name="imagem-artigo">
                                 </div>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Publicar artigo</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Publicar Artigo</button>
                             </div>
                         </form>
                     </div>

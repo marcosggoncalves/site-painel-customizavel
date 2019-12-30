@@ -31,7 +31,7 @@
                                     <label id="descrição">Depoimento</label>
                                     <textarea class="form-control" rows="3" id="descrição" name="descrição" placeholder="Escreva o depoimento"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar depoimento</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar Depoimento</button>
                             </div>
                         </form>
                     </div>

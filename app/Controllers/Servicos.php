@@ -15,7 +15,7 @@ class Servicos extends BaseController
 	{
 		$data = [
 			'servicos'=> $this->model->getServicos(),
-			'titulo' => 'Serviços - site institucional'
+			'titulo' => 'Serviços - painelSite'
 		];
 
 		return view('servicosCadastrar',$data);

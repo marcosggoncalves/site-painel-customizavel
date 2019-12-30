@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="siteStyle/css/variaveis.css">
     <link rel="stylesheet" type="text/css" href="siteStyle/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
@@ -35,7 +36,7 @@
                             <a href="/artigos">Artigos</a>
                         </li>
                         <li>
-                            <a href="/painel">Painel</a>
+                            <a href="/painel" target="_seft">Painel</a>
                         </li>
                     </ul>
                 </nav>
@@ -127,7 +128,7 @@
                 </div>
             </div>
         </section>
-        <section id="fale-conosco" class="container-variavel-opcional">
+        <section id="fale-conosco" class="container-variavel-opcional ">
             <div class="container">
                 <div>
                     <div class="container-titulo">
@@ -177,12 +178,22 @@
                         </form>
                     </div>
                 </div>
+                <div class="container-titulo">
+                    <h1>Redes Sociais</h1>
+                    <div class="redes-sociais">
+                        <ul>
+                            <?php foreach($redes as $rede):?>
+                                <li><a href="<?=$rede['link_social']?>"><?=$rede['icone_social']?></a></li>
+                            <?php endforeach?>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="container">
-            <p>&copy;Site instituicional - desenvolvimento 2019 - <?=date('Y')?> </p>
+            <p>&copy;Site instituicional - Desenvolvimento 2019 - <?=date('Y')?> </p>
         </div>
     </footer>
 </body>

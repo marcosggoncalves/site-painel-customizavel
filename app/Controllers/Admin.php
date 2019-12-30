@@ -27,7 +27,7 @@ class Admin extends BaseController
 			'servicos'=> $this->Servicos->getServicos(),
 			'depoimentos'=> $this->Depoimentos->getDepoimentos(),
 			'usuarios'=> $this->Usuarios->getUsuarios(),
-			'titulo' => 'Painel geral - site institucional'
+			'titulo' => 'Painel geral - painelSite'
 		];
 
 		return view('admin',$data);

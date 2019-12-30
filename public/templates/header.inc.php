@@ -3,7 +3,7 @@
 ?>
 <div class="wrapper">
     <header class="main-header">
-        <a href="/" class="logo">
+        <a href="/painel" class="logo">
             <span class="logo-mini"><b>P</b>S</span>
             <span class="logo-xs"><b>Painel</b>Site</span>
         </a>

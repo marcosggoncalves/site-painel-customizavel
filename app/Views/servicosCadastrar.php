@@ -31,7 +31,7 @@
                                     <label for="descrição">Descrição</label>
                                     <textarea class="form-control" rows="3" id="descrição" name="descrição" placeholder="Descrição serviço"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar serviço</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar Serviço</button>
                             </div>
                         </form>
                     </div>

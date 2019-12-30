@@ -35,7 +35,7 @@
                                     <label for="senha">Senha:</label>
                                     <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha usuário">
                                 </div>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Salvar usuário</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Salvar Usuário</button>
                             </div>
                         </form>
                     </div>

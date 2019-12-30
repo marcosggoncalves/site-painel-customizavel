@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Gerenciamento site institucional</title>
+    <title><?=$titulo?></title>
     <?php include('templates/head.inc.php');?>
 </head>
 

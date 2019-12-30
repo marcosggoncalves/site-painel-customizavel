@@ -15,7 +15,7 @@ class Redes extends BaseController
 	{
 		$data = [
 			'redes'=> $this->model->getRedesSocias(),
-			'titulo' => 'Redes Sociais - site institucional'
+			'titulo' => 'Redes Sociais - painelSite'
 		];
 
 		return view('redesSociaisCadastrar',$data);

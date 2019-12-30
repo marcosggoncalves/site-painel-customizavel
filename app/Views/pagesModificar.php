@@ -59,7 +59,7 @@
                                         </div>
                                      <?php endif?>
                                 <?php endforeach?>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Atualizar página</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Atualizar Página</button>
                             </div>
                         </form>
                     </div>
