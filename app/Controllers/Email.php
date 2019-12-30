@@ -47,10 +47,10 @@ class Email extends BaseController
             $this->enviarEmail(
                 [
                     'emailEnvio'=>$email['email'],
-                    'nome'=>'Contato com empresa',
+                    'nome'=>'E-mail de confirmação de contato.',
                     'telefone'=>'(67) 99834 - 3255',
                     'email'=>'marcoslopesg7@gmail.com',
-                    'mensagem'=> "Obrigado por entrar em contato, entraremos em contato em breve, pelo telefone {$email["telefone"]} referente: {$email["mensagem"]}"
+                    'mensagem'=> "Obrigado por entrar em contato, entraremos em contato em breve, pelo telefone {$email["telefone"]} referente a mensagem: {$email["mensagem"]}"
                 ]
             );
 			return redirect()->to('/#fale-conosco');
@@ -66,7 +66,7 @@ class Email extends BaseController
         $emailEnvio = $email['emailEnvio'];
         $headers.= "From: {$email["email"]} <{$email["email"]}>";
 
-        $envio = mail($email['emailEnvio'],'Contato com nosso equipe !',$email["mensagem"], $headers);
+        $envio = mail($email['emailEnvio'],'Contato com nossa equipe !',$email["mensagem"], $headers);
 
         if($envio){
             return true;

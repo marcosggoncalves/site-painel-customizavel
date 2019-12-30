@@ -1,7 +1,7 @@
 <?php
     $usuarioLogado = $session->get('login')['user'][0]['usuario'];
 ?>
-<div class="wrapper ">
+<div class="wrapper">
     <header class="main-header">
         <a href="/" class="logo">
             <span class="logo-mini"><b>P</b>S</span>
@@ -14,7 +14,7 @@
         </nav>
     </header>
     <aside class="main-sidebar">
-        <section class="sidebar">
+        <section class="sidebar collapsed">
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
@@ -38,9 +38,10 @@
                 </li>
                 <li><a href="/" target="_Seft"><i class="fa fa-home"></i> <span>Visualizar Site</span></a></li>
                 <li><a href="/painel-usuarios"><i class="fa fa-users"></i> <span>Usuários</span></a></li>
-                <li><a href="/painel-depoimentos"><i class="fa fa-users"></i> <span>Depoimentos</span></a></li>
+                <li><a href="/painel-depoimentos"><i class="fa  fa-eye"></i> <span>Depoimentos</span></a></li>
                 <li><a href="/painel-servicos"><i class="fa fa-wrench"></i> <span>Serviços</span></a></li>
                 <li><a href="/painel-artigos"><i class="fa fa-book"></i> <span>Artigos</span></a></li>
+                <li><a href="/painel-rede-social"><i class="fa  fa-commenting-o"></i> <span>Redes Sociais</span></a></li>
                 <li class="bg-red color-palette text-white"><a href="/encerrar-painel"><i class="fa fa-close"></i> <span>Encerrar Sessão</span></a></li>
             </ul>
         </section>

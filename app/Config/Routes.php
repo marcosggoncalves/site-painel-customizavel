@@ -83,6 +83,14 @@ $routes->get('/painel-usuarios', 'Usuarios::index');
 $routes->get('/encerrar-painel', 'Admin::sair');
 $routes->post('/fale-conosco','Email::enviar');
 
+
+// rede social 
+
+$routes->get('/painel-rede-social', 'Redes::index');
+$routes->post('/painel-rede-social-cadastrar', 'Redes::save');
+$routes->post('/painel-rede-social', 'Redes::delete');
+$routes->post('/painel-rede-social-editar/(:any)','Redes::edit/$1');
+
 // pages
 
 $routes->get('personalizar', 'Pages::personalizar');
