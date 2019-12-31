@@ -80,8 +80,9 @@
     
     .banner {
         background: var(--color-banner);
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        position: relative;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
     
     .banner-container {
@@ -89,6 +90,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+        position: relative;
+        top: 0;
+        bottom: 0;
     }
     
     .banner-container img {
@@ -240,10 +244,12 @@
         margin-top: .5rem;
         background: var(--color-banner);
         color: var(--color-font-2);
-        padding: 10px 25px;
+        padding: 8px 20px;
         border: none;
-        border-radius: 20px;
+        border-radius: 5px;
         font-size: 1rem;
+        box-shadow: 1px 1px 1px 1px var(--color-banner);
+        cursor: pointer;
     }
     
     .footer {
@@ -391,6 +397,7 @@
         }
         .banner-container {
             flex-direction: row;
+            position: absolute;
         }
         .banner-container-texto {
             width: 50%;

@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$titulo?>">
-    <meta name="keywords" content="Tecnologia, Soluções, Soluções Digitais, Marketing Digital, Digital ">
+    <meta name="keywords" content="Tecnologia, Soluções, Prado Soluções Digitais, Marketing Digital, Digital ">
     <meta name="robots" content="index">
 </head>
 
@@ -53,7 +53,7 @@
     <main>
         <section class="banner" id="home">
             <div class="container">
-                <div class="banner-container">
+                <div class="banner-container container">
                     <div class="banner-container-img">
                         <img src="<?=$site['Banner']['img_page']?>" alt="Imagem banner container">
                     </div>
@@ -145,7 +145,7 @@
                         if($session->getFlashdata('save')):
                             if($session->getFlashdata('save')['status'] == true) :?>
                                 <div class="success">
-                                    <h4><i class="icon fa fa-ban"></i>Mensagem enviada !</h4>
+                                    <h4><i class="icon fa fa-check"></i> Mensagem enviada !</h4>
                                     <?php
                                         echo $session->getFlashdata('save')['message'];
                                     ?>
@@ -155,7 +155,7 @@
                                 </div>
                             <?php else:?>
                             <div class="alert">
-                                <h4><i class="icon fa fa-ban"></i>Falha encontrada !</h4>
+                                <h4><i class="icon fa fa-ban"></i> Falha encontrada !</h4>
                                 <?php
                                     echo $session->getFlashdata('save')['message'];
                                 ?>
@@ -170,7 +170,7 @@
                                 <input type="text" placeholder="Nome" name="nome">
                             </div>
                             <div class="container-input">
-                                <input type="text" placeholder="Telefone" name="telefone">
+                                <input type="number" placeholder="Telefone" name="telefone">
                             </div>
                             <div class="container-input">
                                 <input type="email" placeholder="E-mail" name="email">

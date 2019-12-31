@@ -8,7 +8,7 @@
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$artigo[0]['titulo']?>">
-    <meta name="keywords" content="Artigos, Soluções, Soluções Digitais ">
+    <meta name="keywords" content="Artigos, Soluções, Prado Soluções Digitais ">
     <meta name="robots" content="index">
 </head>
 

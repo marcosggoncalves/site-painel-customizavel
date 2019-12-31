@@ -28,7 +28,7 @@ class Home extends BaseController
 			'depoimentos'=> $this->Depoimentos->getDepoimentos(),
 			'site'=>$this->formatArray($pages),
 			'redes'=>$this->redes->getRedesSocias(),
-			'titulo' => 'Soluções Digitais'
+			'titulo' => 'Prados Soluções Digitais'
 		];
 		
 		return view('home',$data);
@@ -67,7 +67,7 @@ class Home extends BaseController
 		$data = [
 			'artigos'=> $this->Artigos->paginate(6,'list'),
 			'site'=>$this->formatArray($pages),
-			'titulo' => 'Artigos publicados | Soluções Digitais',
+			'titulo' => 'Artigos publicados | Prados Soluções Digitais',
 			'pager' => $this->Artigos->pager
 		];
 		
