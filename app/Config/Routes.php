@@ -73,6 +73,12 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
+
+// SEO 
+
+$routes->get('sitemap', 'SitemapGenerator::index');
+
+
 $routes->get('/', 'Home::index');
 $routes->get('/artigos/(:segment)','Home::view/$1');
 $routes->get('/artigos','Home::artigos');
