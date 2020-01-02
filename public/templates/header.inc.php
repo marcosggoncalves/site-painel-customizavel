@@ -23,7 +23,7 @@
                 <li><a href="/painel-configuracoes-gerais"><i class="fa fa-television"></i> <span>Configurações Gerais</span></a></li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-file"></i> <span>Páginas - container</span>
+                        <i class="fa fa-file"></i> <span>Páginas - Container</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -37,6 +37,8 @@
                         <li><a href="/personalizar?page=Contato"><i class="fa fa-circle-o"></i>Fale Conosco</a></li>
                     </ul>
                 </li>
+                <li><a href="/painel-portfolios"><i class="fa  fa-suitcase"></i> <span>Portfólios - Trabalhos</span></a></li>
+                <li><a href="/painel-profissionais"><i class="fa fa-child"></i> <span>Profissionais - Equipe</span></a></li>
                 <li><a href="/" target="_Seft"><i class="fa fa-home"></i> <span>Visualizar Site</span></a></li>
                 <li><a href="/painel-usuarios"><i class="fa fa-users"></i> <span>Usuários</span></a></li>
                 <li><a href="/painel-depoimentos"><i class="fa  fa-eye"></i> <span>Depoimentos</span></a></li>

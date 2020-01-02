@@ -6,6 +6,7 @@
         <?=$titulo?>
     </title>
     <?php include('templates/head.inc.php');?>
+    <?php include('templates/scripts.inc.php');?>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -13,7 +14,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Redes sociais
+                Profissionais - Equipe
             </h1>
         </section>
         <section class="content">
@@ -21,25 +22,21 @@
                 <?php include('templates/msg.inc.php');?>
                 <div class="col-md-12">
                     <div class="box box-primary">
-                        <form role="form" action="/painel-rede-social-cadastrar" method="post">
+                        <form action="/painel-profissionais-cadastrar" method="post" enctype="multipart/form-data">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="link">Link:</label>
-                                    <input type="text" class="form-control" id="link" name="link" placeholder="Link rede social">
+                                    <label>Imagem:</label>
+                                    <input type="file" class="form-control" id="imagem" name="imagem">
                                 </div>
                                 <div class="form-group">
                                     <label for="nome">Nome:</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome rede social">
+                                    <input type="nome" class="form-control" id="nome" name="nome" placeholder="Nome profissional">
                                 </div>
                                 <div class="form-group">
-                                    <label for="icone">Icone:</label>
-                                    <input type="text" class="form-control" id="icone" name="icone" placeholder="icone rede social exemplo: <i class='fa fa-fw  fa-facebook'></i>" value="<i class='fa fa-fw  ==coloque o nome do icone=='></i>">
+                                    <label>Sobre:</label>
+                                    <textarea class="form-control" id="sobre" name="sobre" rows="10" cols="80" placeholder="Sobre Profissional"></textarea>
                                 </div>
-                                <div class="callout callout-warning">
-                                    <h4>Atenção !</h4>
-                                    <p>Acesse o link <a href="https://adminlte.io/themes/AdminLTE/pages/UI/icons.html" target="_seft">https://adminlte.io/themes/AdminLTE/pages/UI/icons.html</a> escolha o icone de sua rede social, copie o nome e cole com tag 'i', exemplo descrito no campo icone.</p>
-                                </div>
-                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Salvar Rede Social</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Cadastrar Profissional</button>
                             </div>
                         </form>
                     </div>
@@ -47,83 +44,80 @@
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Rede sociais</h3>
+                            <h3 class="box-title">Profissionais</h3>
                         </div>
-                        <!-- /.box-header -->
                         <div class="box-body  table-responsive no-padding">
                             <table class="table table-hover">
                                 <tr>
                                     <th class='text-center'>#</th>
-                                    <th class='text-center'>Icone</th>
+                                    <th class='text-center'>Foto</th>
                                     <th class='text-center'>Nome</th>
-                                    <th class='text-center'>Link</th>
                                     <th>Action</th>
                                 </tr>
-                                <?php foreach($redes as $rede): ?>
+                                <?php foreach($profissionais as $profissional): ?>
                                 <tr>
                                     <td class='text-center'>
-                                        <?=$rede['id_rede_social']?>
+                                        <?=$profissional['id_profissionais']?>
                                     </td>
                                     <td class='text-center'>
-                                        <?=$rede['icone_social']?>
+                                        <img src="<?=$profissional['curriculo_profissional']?>" alt="<?=$profissional['nome_profissional']?>" width="60px">
                                     </td>
                                     <td class='text-center'>
-                                        <?=$rede['nome_social']?>
-                                    </td>
-                                    <td class='text-center'>
-                                        
-                                        <a class="btn btn-primary btn-sm" href="<?=$rede['link_social']?>">Acessar</a>
+                                        <?=$profissional['nome_profissional']?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$rede['id_rede_social']?>">Excluir</a>
-                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$rede['id_rede_social']?>">Editar</a>
-
-                                        <div class="modal fade" id="delete<?=$rede['id_rede_social']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
+                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$profissional['id_profissionais']?>">Excluir</a>
+                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$profissional['id_profissionais']?>">Editar</a>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="delete<?=$profissional['id_profissionais']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="deleteLabel">Atenção ! Rede Social excluido. </h4>
+                                                        <h4 class="modal-title" id="deleteLabel">Atenção ! Profissional será excluido. </h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <?=$rede['id_rede_social']?> - Deseja excluir mesmo ?
+                                                        <?=$profissional['id_profissionais']?> - Deseja excluir mesmo ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="/painel-rede-social" method="post">
+                                                        <form action="/painel-profissionais" method="post">
                                                             <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
                                                             <input type='submit' class="btn btn-success" value="Sim, estou ciente." />
-                                                            <input type='hidden' name="id" value="<?=$rede['id_rede_social']?>" />
+                                                            <input type='hidden' name="id" value="<?=$profissional['id_profissionais']?>" />
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="modal fade" id="edit<?=$rede['id_rede_social']?>" tabindex="-1" role="dialog" aria-labelledby="editLabel">
+                                        <div class="modal fade" id="edit<?=$profissional['id_profissionais']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         <h4 class="modal-title" id="editLabel">Editar -
-                                                            <?=$rede['nome_social']?>
+                                                            <?=$profissional['nome_profissional']?>
                                                         </h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form role="form" action="/painel-rede-social-editar/<?=$rede['id_rede_social']?>" method="post">
+                                                        <form action="/painel-profissionais-editar/<?=$profissional['id_profissionais']?>" method="post" enctype="multipart/form-data">
                                                             <div class="box-body">
                                                                 <div class="form-group">
-                                                                    <label for="link-edit">Link:</label>
-                                                                    <input type="text" class="form-control" id="link-edit" name="link-edit" placeholder="Link rede social" value="<?=$rede['link_social']?>">
+                                                                    <label>Imagem:</label>
+                                                                    <input type="file" class="form-control" id="imagem-edit" name="imagem-edit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <span><b>Imagem Atual:</b></span>
+                                                                    <img src="<?=$profissional['curriculo_profissional']?>" alt="<?=$profissional['sobre_profissional']?>" width="100%">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="nome-edit">Nome:</label>
-                                                                    <input type="text" class="form-control" id="nome-edit" name="nome-edit" placeholder="Nome rede social" value="<?=$rede['nome_social']?>">
+                                                                    <input type="nome" class="form-control" id="nome-edit" name="nome-edit" placeholder="Nome profissional" value="<?=$profissional['nome_profissional']?>">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="icone-edit">Icone:</label>
-                                                                    <input type="text" class="form-control" id="icone-edit" name="icone-edit" placeholder="Icone rede social" value="<?=$rede['icone_social']?>">
+                                                                    <label>Sobre:</label>
+                                                                    <textarea class="form-control" id="sobre-edit" name="sobre-edit" rows="10" cols="80" placeholder="Sobre Profissional"><?=$profissional['sobre_profissional']?></textarea>
                                                                 </div>
-                                                                <button type="submit" class="btn btn-success">Salvar Alteração</button>
+                                                                <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar Alterações</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -132,7 +126,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <?php endforeach?>
+                                <?php endforeach ?>
                             </table>
                         </div>
                     </div>
@@ -141,6 +135,6 @@
         </div>
         <?php include('templates/footer.inc.php');?>
     </div>
-    <?php include('templates/scripts.inc.php');?>
 </body>
+
 </html>

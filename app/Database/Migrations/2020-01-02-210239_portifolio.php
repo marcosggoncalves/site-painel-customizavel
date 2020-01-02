@@ -18,8 +18,7 @@ class Portifolio extends Migration
 				'constraint'=>300
 			],
 			'sobre_portifolio'=>[
-				'type'=>'varchar',
-				'constraint'=>300
+				'type'=>'text',
 			],
 			'img_portifolio'=>[
 				'type'=>'text'

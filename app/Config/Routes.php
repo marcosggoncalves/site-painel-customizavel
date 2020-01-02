@@ -136,6 +136,21 @@ $routes->get('/painel-artigos', 'Artigos::index');
 $routes->post('/painel-artigos-cadastrar', 'Artigos::save');
 $routes->post('/painel-artigos','Artigos::delete');
 $routes->post('/painel-artigos-editar/(:any)','Artigos::edit/$1');
+
+// profissionais
+
+$routes->get('/painel-profissionais', 'Profissionais::index');
+$routes->post('/painel-profissionais-cadastrar', 'Profissionais::save');
+$routes->post('/painel-profissionais','Profissionais::delete');
+$routes->post('/painel-profissionais-editar/(:any)','Profissionais::edit/$1');
+
+// portfólios - trabalhos
+
+$routes->get('/painel-portfolios', 'Portfolio::index');
+$routes->post('/painel-portfolios-cadastrar', 'Portfolio::save');
+$routes->post('/painel-portfolios','Portfolio::delete');
+$routes->post('/painel-portfolios-editar/(:any)','Portfolio::edit/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
