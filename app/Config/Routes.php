@@ -80,7 +80,7 @@ $routes->get('sitemap', 'SitemapGenerator::index');
 
 
 $routes->get('/', 'Home::index');
-$routes->get('/artigos/(:segment)','Home::view/$1');
+$routes->get('/artigos/(:any)','Home::view/$1');
 $routes->get('/artigos','Home::artigos');
 $routes->get('/painel', 'Admin::index');
 $routes->get('/painel-depoimentos', 'Depoimentos::index');
@@ -89,6 +89,11 @@ $routes->get('/painel-usuarios', 'Usuarios::index');
 $routes->get('/encerrar-painel', 'Admin::sair');
 $routes->post('/fale-conosco','Email::enviar');
 
+
+// configurações gerais
+
+$routes->get('/painel-configuracoes-gerais', 'ConfigPage::index');
+$routes->post('/painel-configuracoes-gerais', 'ConfigPage::alterarConfig');
 
 // rede social 
 

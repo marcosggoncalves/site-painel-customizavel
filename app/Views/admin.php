@@ -18,66 +18,56 @@
         </section>
         <section class="content">
             <div class="row">
-            <?php include('templates/msg.inc.php');?>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-red"><i class="ion ion-ios-people"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Usuários</span>
-                            <span class="info-box-number"><?=count($usuarios)?></span>
+                <?php include('templates/msg.inc.php');?>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3><?=count($usuarios)?></h3>
+                            <p>Usuários</p>
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-aqua"><i class="fa fa-wrench"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Serviços</span>
-                            <span class="info-box-number"><?=count($servicos)?></span>
+                        <div class="icon">
+                        <i class="ion ion-ios-people"></i>
                         </div>
-                        <!-- /.info-box-content -->
+                        <a href="/painel-usuarios" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
-                    <!-- /.info-box -->
                 </div>
-
-                <!-- fix for small devices only -->
-                <div class="clearfix visible-sm-block"></div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-green"><i class="ion-ios-albums"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Artigos</span>
-                            <span class="info-box-number"><?=count($artigos)?></span>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3><?=count($servicos)?></h3>
+                            <p>Serviços</p>
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-yellow"><i class="ion-ios-people"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Depoimentos</span>
-                            <span class="info-box-number"><?=count($depoimentos)?></span>
+                        <div class="icon">
+                        <i class="fa  fa-briefcase"></i>
                         </div>
-                        <!-- /.info-box-content -->
+                        <a href="/painel-servicos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
-                    <!-- /.info-box -->
                 </div>
-
-                <!-- /.col -->
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3><?=count($artigos)?></h3>
+                            <p>Artigos</p>
+                        </div>
+                        <div class="icon">
+                        <i class="ion-ios-albums"></i>
+                        </div>
+                        <a href="/painel-artigos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3><?=count($depoimentos)?></h3>
+                            <p>Depoimentos</p>
+                        </div>
+                        <div class="icon">
+                        <i class="fa fa-commenting-o"></i>
+                        </div>
+                        <a href="/painel-depoimentos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
-
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="box">

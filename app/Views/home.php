@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$titulo?>">
-    <meta name="keywords" content="Tecnologia, Soluções, Prado Soluções Digitais, Marketing Digital, Digital ">
+    <meta name="keywords" content="Prado Soluções Digitais, Tecnologia, Soluções, Marketing Digital, Digital ">
     <meta name="robots" content="index">
 </head>
 
@@ -23,7 +23,7 @@
         <div class="container">
             <div class="header-layout">
                 <div class="logo">
-                    <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>">
+                    <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" >
                 </div>
                 <nav>
                     <ul>
@@ -201,7 +201,15 @@
         </div>
     </footer>
 </body>
+<script>
+    <?php
+        foreach($config as $prop){
+            if($prop['typeConfig'] === 'color' ||  $prop['typeConfig'] === 'tamanho'){
+                echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
+            }
+        }
+    ?>
+</script>
 <script src="siteStyle/js/carousel.js"></script>
 <script src="siteStyle/js/scroll.js"></script>
-
 </html>

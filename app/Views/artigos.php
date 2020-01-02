@@ -8,7 +8,7 @@
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$artigo[0]['titulo']?>">
-    <meta name="keywords" content="Artigos, Soluções, Prado Soluções Digitais ">
+    <meta name="keywords" content="Artigos, Soluções, Prado Soluções Digitais">
     <meta name="robots" content="index">
 </head>
 
@@ -71,5 +71,14 @@
             <p>&copy;Site instituicional - desenvolvimento 2019 - <?=date('Y')?> </p>
         </div>
     </footer>
+    <script>
+        <?php
+            foreach($config as $prop){
+                if($prop['typeConfig'] === 'color'){
+                    echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
+                }
+            }
+        ?>
+    </script>
 </body>
 </html>

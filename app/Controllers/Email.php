@@ -1,13 +1,18 @@
 <?php namespace App\Controllers;
-use App\Models\DepoimentosModel;
-use App\Models\ServicosModel;
-use App\Models\ArtigosModel;
-use App\Models\PagesModel;
+use App\Models\ConfigPageModel;
 use CodeIgniter\Controller;
 
 class Email extends BaseController
 {
+    public function __construct()
+    {
+        helper('url');
+        
+		$this->config = new ConfigPageModel();
+	}
     public function enviar(){
+
+        $email  = $this->config->config('emailEnvio');
         $validation = \Config\Services::validation();
 
 		$validate = $this->validate([
@@ -30,7 +35,7 @@ class Email extends BaseController
         
         
         $email = [
-            'emailEnvio'=>'marcoslopesg7@gmail.com',
+            'emailEnvio'=>$email[0]['valueConfig'],
             'nome'=>$this->request->getVar('nome'),
             'telefone'=>$this->request->getVar('telefone'),
             'email'=>$this->request->getVar('email'),
@@ -48,9 +53,9 @@ class Email extends BaseController
                 [
                     'emailEnvio'=>$email['email'],
                     'nome'=>'E-mail de confirmação de contato.',
-                    'telefone'=>'(67) 99834 - 3255',
-                    'email'=>'marcoslopesg7@gmail.com',
-                    'mensagem'=> "Obrigado por entrar em contato, entraremos em contato em breve, pelo telefone {$email["telefone"]} referente a mensagem: {$email["mensagem"]}"
+                    'telefone'=>'(67) 9810-2493',
+                    'email'=>$email[0]['valueConfig'],
+                    'mensagem'=> "Obrigado por entrar em contato conosco, estaremos retornando em breve, pelo telefone {$email["telefone"]}, \n referente: {$email["mensagem"]}"
                 ]
             );
 			return redirect()->to('/#fale-conosco');
@@ -66,7 +71,7 @@ class Email extends BaseController
         $emailEnvio = $email['emailEnvio'];
         $headers.= "From: {$email["email"]} <{$email["email"]}>";
 
-        $envio = mail($email['emailEnvio'],'Contato com nossa equipe !',$email["mensagem"], $headers);
+        $envio = mail($email['emailEnvio'],'Prado Soluções Digitais',$email["mensagem"], $headers,"-r".$email['email']);
 
         if($envio){
             return true;

@@ -4,6 +4,7 @@ use App\Models\ServicosModel;
 use App\Models\ArtigosModel;
 use App\Models\PagesModel;
 use App\Models\RedesModel;
+use App\Models\ConfigPageModel;
 use CodeIgniter\Controller;
 
 class Home extends BaseController
@@ -17,6 +18,7 @@ class Home extends BaseController
 		$this->Depoimentos = new DepoimentosModel();
 		$this->pages = new PagesModel();
 		$this->redes = new RedesModel();
+		$this->config = new ConfigPageModel();
 	}
 	public function index()
 	{
@@ -28,7 +30,8 @@ class Home extends BaseController
 			'depoimentos'=> $this->Depoimentos->getDepoimentos(),
 			'site'=>$this->formatArray($pages),
 			'redes'=>$this->redes->getRedesSocias(),
-			'titulo' => 'Prados Soluções Digitais'
+			'config'=> $this->config->getConfig(),
+			'titulo' => 'Prado Soluções Digitais'
 		];
 		
 		return view('home',$data);
@@ -46,7 +49,8 @@ class Home extends BaseController
 		$data = [
 			'titulo'=>$artigo[0]['titulo'],
 			'artigo'=>$artigo,
-			'site'=>$this->formatArray($pages)
+			'site'=>$this->formatArray($pages),
+			'config'=> $this->config->getConfig()
 		];
 
 		return view('artigo',$data);
@@ -65,10 +69,11 @@ class Home extends BaseController
 		$pager = \Config\Services::pager();
 
 		$data = [
-			'artigos'=> $this->Artigos->paginate(6,'list'),
+			'artigos'=> $this->Artigos->orderBy('id_artigo', 'DESC')->paginate(6,'list'),
 			'site'=>$this->formatArray($pages),
-			'titulo' => 'Artigos publicados | Prados Soluções Digitais',
-			'pager' => $this->Artigos->pager
+			'titulo' => 'Artigos publicados | Prado Soluções Digitais',
+			'pager' => $this->Artigos->pager,
+			'config'=> $this->config->getConfig()
 		];
 		
 		return view('artigos',$data);

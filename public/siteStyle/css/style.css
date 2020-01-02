@@ -54,7 +54,7 @@
     }
     
     .logo img {
-        max-width: 3.5rem;
+        max-width: var(--tamanho-logo);
     }
     
     .logo {
@@ -69,7 +69,7 @@
     .btn-especial {
         background: var( --color-banner);
         padding: 10px 20px;
-        border-radius: 20px;
+        border-radius: 5px;
         margin-top: 10px;
     }
     
