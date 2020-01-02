@@ -30,7 +30,7 @@ class configPageSeeder extends \CodeIgniter\Database\Seeder
              'typeConfig'=>'color'
             ],
             [
-            'label'=>'Tamanho LogoTipo:',
+            'label'=>'Tamanho Logo tipo:',
             'labelConfig'=>'--tamanho-logo',
             'valueConfig'=>'12rem',
             'typeConfig'=>'tamanho'
@@ -46,6 +46,24 @@ class configPageSeeder extends \CodeIgniter\Database\Seeder
             'labelConfig'=>'mailchimpApi',
             'valueConfig'=>'b52b69c726ee15f486b29e4f4bf4235d-us4',
             'typeConfig'=>'text'
+            ],
+            [
+            'label'=>'Cor de fundo site:',
+            'labelConfig'=>'--cor-fundo',
+            'valueConfig'=>'#f8f8f8',
+            'typeConfig'=>'color'
+            ],
+            [
+            'label'=>'Cor de texto container:',
+            'labelConfig'=>'--color-titulo',
+            'valueConfig'=>'#1A628A',
+            'typeConfig'=>'color'
+            ],
+            [
+            'label'=>'Fonte principal do site:',
+            'labelConfig'=>'--font-size',
+            'valueConfig'=>'Arial',
+            'typeConfig'=>'tamanho'
             ]
         ];
 

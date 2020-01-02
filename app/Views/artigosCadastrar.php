@@ -59,8 +59,8 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Artigos</h3>
                         </div>
-                        <div class="box-body">
-                            <table class="table table-bordered">
+                        <div class="box-body  table-responsive no-padding">
+                            <table class="table table-hover">
                                 <tr>
                                     <th class='text-center'>#</th>
                                     <th class='text-center'>Titulo</th>

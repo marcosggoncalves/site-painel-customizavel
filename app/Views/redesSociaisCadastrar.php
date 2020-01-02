@@ -50,8 +50,8 @@
                             <h3 class="box-title">Rede sociais</h3>
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body">
-                            <table class="table table-bordered">
+                        <div class="box-body  table-responsive no-padding">
+                            <table class="table table-hover">
                                 <tr>
                                     <th class='text-center'>#</th>
                                     <th class='text-center'>Icone</th>

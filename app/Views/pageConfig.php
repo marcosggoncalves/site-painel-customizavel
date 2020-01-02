@@ -17,27 +17,66 @@
             </h1>
         </section>
         <section class="content">
-        <div class="row">
-         <?php include('templates/msg.inc.php');?>
-            <div class="col-md-12">
-                <div class="box box-primary">
-                    <form role="form" action="/painel-configuracoes-gerais" method="post">
-                        <div class="box-body">
-                            <?php foreach($configSite as $config):?>
-                                <div class="form-group">
-                                    <label for="<?=$config['labelConfig']?>"><?=$config['label']?></label>
-                                    <input type="<?=$config['typeConfig']?>" class="form-control" id="<?=$config['labelConfig']?>" name="<?=$config['labelConfig']?>" value="<?=$config['valueConfig']?>">
+            <div class="row">
+                <?php include('templates/msg.inc.php');?>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="box box-default collapsed-box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Instruções configurações gerais</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                                 </div>
-                            <?php endforeach?>
-                            <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar configurações</button>
+                            </div>
+                            <div class="box-body">
+                                <div class="callout callout-warning">
+                                    <p>
+                                        Essa sessão foi criada com objetivo para alterar opções gráficas do site e inregrações com outras ferramentas. Em relações a opções gráficas, mantenha as proporções e combinações de cores, logo abaixo, disponibilizarei artigo sobre esse assunto.</p>
+                                    <ul>
+                                        <span><b>Opções gráficas</b></span>
+                                        <li>Cor de cabeçalho do site</li>
+                                        <li>Cor principal do site</li>
+                                        <li>Cor de texto 1 e 2</li>
+                                        <li>Tamanho da logo tipo de site</li>
+                                        <li>Fonte do site</li>
+                                        <li>Cor de fundo do site</li>
+                                        <li>Cor do dos containers do site</li>
+                                    </ul>
+                                    <ul>
+                                        <span><b>Outras configurações</b></span>
+                                        <li>Email de contato</li>
+                                        <li>Api mailchimp</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                </div>
-            </div>
+
+                        <div class="box box-primary">
+                            <form role="form" action="/painel-configuracoes-gerais" method="post">
+                                <div class="box-body">
+                                    <?php foreach($configSite as $config):?>
+                                    <?php if($config['labelConfig'] === "--font-size"):?>
+                                    <div class="callout callout-warning">
+                                        <h4>Atenção!</h4>
+
+                                        <p>Acesse <a href="https://fonts.google.com/" target="_seft">https://fonts.google.com</a> para escolher a fonte para seu site, copie o nome e cole no campo terminado abaixo.</p>
+                                    </div>
+                                    <?php endif?>
+                                    <div class="form-group">
+                                        <label for="<?=$config['labelConfig']?>"><?=$config['label']?></label>
+                                        <input type="<?=$config['typeConfig']?>" class="form-control" id="<?=$config['labelConfig']?>" name="<?=$config['labelConfig']?>" value="<?=$config['valueConfig']?>">
+                                    </div>
+                                    <?php endforeach?>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar configurações</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
         </section>
-    </div>
-    <?php include('templates/footer.inc.php');?>
-    </div>
-    <?php include('templates/scripts.inc.php');?>
+        </div>
+        <?php include('templates/footer.inc.php');?>
+        </div>
+        <?php include('templates/scripts.inc.php');?>
 </body>
+
 </html>

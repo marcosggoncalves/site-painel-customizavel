@@ -8,34 +8,34 @@ class Email extends BaseController
     {
         helper('url');
         
-		$this->config = new ConfigPageModel();
-	}
+        $this->config = new ConfigPageModel();
+    }
     public function enviar(){
 
-        $email  = $this->config->config('emailEnvio');
+        $emailConfig  = $this->config->config('emailEnvio');
         $validation = \Config\Services::validation();
 
-		$validate = $this->validate([
-			'nome'  => 'required',
+        $validate = $this->validate([
+            'nome'  => 'required',
             'telefone'  => 'required',
             'email'  => 'required',
-			'mensagem'  => 'required'
-		]);
-		
-		if(!$validate){
-			$data = [
-				'validate'=>$this->validator->listErrors(),
-				'status'=>false,
-				'message'=>'Não foi possivel enviar e-mail.'
-			];
-	
-			$this->session->setFlashdata('save', $data);
-			return redirect()->to('/#fale-conosco');
+            'mensagem'  => 'required'
+        ]);
+        
+        if(!$validate){
+            $data = [
+                'validate'=>$this->validator->listErrors(),
+                'status'=>false,
+                'message'=>'Não foi possivel enviar e-mail.'
+            ];
+    
+            $this->session->setFlashdata('save', $data);
+            return redirect()->to('/#fale-conosco');
         }
         
         
         $email = [
-            'emailEnvio'=>$email[0]['valueConfig'],
+            'emailEnvio'=>"{$emailConfig[0]['valueConfig']}",
             'nome'=>$this->request->getVar('nome'),
             'telefone'=>$this->request->getVar('telefone'),
             'email'=>$this->request->getVar('email'),
@@ -54,16 +54,16 @@ class Email extends BaseController
                     'emailEnvio'=>$email['email'],
                     'nome'=>'E-mail de confirmação de contato.',
                     'telefone'=>'(67) 9810-2493',
-                    'email'=>$email[0]['valueConfig'],
+                    'email'=>"{$emailConfig[0]['valueConfig']}",
                     'mensagem'=> "Obrigado por entrar em contato conosco, estaremos retornando em breve, pelo telefone {$email["telefone"]}, \n referente: {$email["mensagem"]}"
                 ]
             );
-			return redirect()->to('/#fale-conosco');
+            return redirect()->to('/#fale-conosco');
         }else{
             $data['status'] = false;
             $data['message'] = 'Não foi possivel enviar mensagem, tente novamente.';
             $this->session->setFlashdata('save', $data);
-			return redirect()->to('/#fale-conosco');
+            return redirect()->to('/#fale-conosco');
         }
     }
     private function enviarEmail($email){

@@ -19,6 +19,7 @@ class Home extends BaseController
 		$this->pages = new PagesModel();
 		$this->redes = new RedesModel();
 		$this->config = new ConfigPageModel();
+		$this->fontSize  = $this->config->config('--font-size');
 	}
 	public function index()
 	{
@@ -31,7 +32,8 @@ class Home extends BaseController
 			'site'=>$this->formatArray($pages),
 			'redes'=>$this->redes->getRedesSocias(),
 			'config'=> $this->config->getConfig(),
-			'titulo' => 'Prado Soluções Digitais'
+			'titulo' => 'Prado Soluções Digitais',
+			'font'=> $this->fontSize[0]['valueConfig']
 		];
 		
 		return view('home',$data);
@@ -50,7 +52,8 @@ class Home extends BaseController
 			'titulo'=>$artigo[0]['titulo'],
 			'artigo'=>$artigo,
 			'site'=>$this->formatArray($pages),
-			'config'=> $this->config->getConfig()
+			'config'=> $this->config->getConfig(),
+			'font'=> $this->fontSize[0]['valueConfig']
 		];
 
 		return view('artigo',$data);
@@ -73,7 +76,8 @@ class Home extends BaseController
 			'site'=>$this->formatArray($pages),
 			'titulo' => 'Artigos publicados | Prado Soluções Digitais',
 			'pager' => $this->Artigos->pager,
-			'config'=> $this->config->getConfig()
+			'config'=> $this->config->getConfig(),
+			'font'=> $this->fontSize[0]['valueConfig']
 		];
 		
 		return view('artigos',$data);

@@ -6,6 +6,7 @@
     <title><?=$titulo?></title>
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/variaveis.css">
     <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=<?=$font?>" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$artigo[0]['titulo']?>">
     <meta name="keywords" content="Artigos, Soluções, Prado Soluções Digitais">
@@ -74,7 +75,7 @@
     <script>
         <?php
             foreach($config as $prop){
-                if($prop['typeConfig'] === 'color'){
+                if($prop['typeConfig'] === 'color' || $prop['typeConfig'] === 'tamanho' ){
                     echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
                 }
             }

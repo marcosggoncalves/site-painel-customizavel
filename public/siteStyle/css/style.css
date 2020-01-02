@@ -1,14 +1,14 @@
     * {
         padding: 0;
         margin: 0;
-        font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: var(--font-size);
         outline: none;
         font-size: .9rem;
     }
     
     html,
     body {
-        background: #fcfbfb;
+        background: var(--cor-fundo);
     }
     
     a {
@@ -127,7 +127,7 @@
     
     .container-titulo h1 {
         font-size: var(--size-font-titulos-container);
-        color: var(--color-banner);
+        color: var(--color-titulo);
     }
     
     .container-titulo p {
@@ -152,9 +152,7 @@
     
     .card {
         background: var(--color-header);
-        box-shadow: 0px 5px 7px 2px rgba(237, 237, 237, 0.72);
-        -moz-box-shadow: 0px 5px 7px 2px rgba(237, 237, 237, 0.72);
-        -webkit-box-shadow: 0px 5px 7px 2px rgba(237, 237, 237, 0.72);
+        box-shadow: 2px 2px 2px 2px #ededed;
         padding: 20px 20px;
         width: 90%;
         margin: 10px 0px;
@@ -263,6 +261,14 @@
     
     .redes-sociais {
         margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .redes-sociais h1 {
         margin-bottom: 1rem;
     }
     

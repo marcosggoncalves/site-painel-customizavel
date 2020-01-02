@@ -9,7 +9,7 @@
     <style>
         html,
         body{
-            background:#1A628A;
+            background:#337ab7;
         }
         .login-page{
             background:unset;
