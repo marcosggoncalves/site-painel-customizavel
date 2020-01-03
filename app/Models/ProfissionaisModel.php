@@ -28,4 +28,8 @@ class ProfissionaisModel extends Model
     {
        return $this->where('id_profissionais',$id)->set($data)->update();
     }
+    public function getProfissionalLike($param)
+    {
+        return $this->where('nome_profissional', $param)->from($table)->findAll();
+    }
 }

@@ -122,7 +122,7 @@
     
     .container-titulo {
         text-align: justify;
-        padding: 20px 20px;
+        padding: 20px 0px;
     }
     
     .container-titulo h1 {
@@ -371,6 +371,83 @@
         list-style: none;
     }
     
+    .portfolio {
+        background: var(--color-font-2);
+        box-shadow: 1px 1px 1px 1px #ededed;
+        padding: 20px 20px;
+        margin-top: 2rem;
+    }
+    
+    .portfolio h1,
+    .portfolio p {
+        color: var(--color-font-1);
+    }
+    
+    .portfolio h1 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .trabalhos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .trabalhos .card {
+        width: 100%;
+        box-shadow: unset;
+        border: 1px solid #ededee;
+    }
+    
+    .trabalhos .card h1 {
+        font-size: .8rem;
+    }
+    
+    .trabalhos .card p {
+        text-align: justify;
+        font-size: .8rem;
+    }
+    
+    .card-retrato {
+        display: flex;
+        background: var(--color-font-2);
+        box-shadow: 1px 1px 1px 1px #dedede;
+        padding: 20px 20px;
+        margin-bottom: 2rem;
+    }
+    
+    .card-retrato-img img {
+        max-width: 9rem;
+        border-radius: 5px;
+    }
+    
+    .card-retrato-corpo p {
+        text-align: justify;
+        color: var(--color-font-1);
+    }
+    
+    .card-retrato-titulo h1 {
+        padding-bottom: .7rem;
+    }
+    
+    .content {
+        padding-left: 20px;
+    }
+    
+    .btn-portfolio {
+        padding: 1rem 0rem;
+    }
+    
+    .btn-portfolio a {
+        font-size: .8rem;
+        padding: 10px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: var(--color-font-2);
+        background: var(--color-banner);
+    }
+    
     @media screen and (min-width:720px) {
         * {
             font-size: initial;
@@ -424,5 +501,8 @@
         }
         .postagem img {
             width: 400px;
+        }
+        .trabalhos .card {
+            width: 250px;
         }
     }

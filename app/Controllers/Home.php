@@ -6,6 +6,8 @@ use App\Models\PagesModel;
 use App\Models\RedesModel;
 use App\Models\ConfigPageModel;
 use CodeIgniter\Controller;
+use App\Models\ProfissionaisModel;
+use App\Models\PortfolioModel;
 
 class Home extends BaseController
 {
@@ -19,6 +21,8 @@ class Home extends BaseController
 		$this->pages = new PagesModel();
 		$this->redes = new RedesModel();
 		$this->config = new ConfigPageModel();
+		$this->trabalhos = new PortfolioModel();
+		$this->profissionais = new ProfissionaisModel();
 		$this->fontSize  = $this->config->config('--font-size');
 	}
 	public function index()
@@ -81,5 +85,47 @@ class Home extends BaseController
 		];
 		
 		return view('artigos',$data);
+	}
+	public function profissionais()
+	{
+		$pages = $this->pages->pages();
+		$profissionais = $this->profissionais->getProfissionais();
+
+		if(count($profissionais) === 0){
+			return redirect()->to('/');
+		}
+
+		$data = [
+			'titulo'=>'Nossa equipe | Prado Soluções Digitais',
+			'profissionais'=> $profissionais,
+			'site'=>$this->formatArray($pages),
+			'config'=> $this->config->getConfig(),
+			'font'=> $this->fontSize[0]['valueConfig']
+		];
+
+		return view('equipe',$data);
+	}
+	public function portfolio($profissional)
+	{
+		$decodeUrl = str_replace("-"," ",urldecode($profissional));
+		$profissionalFilter = $this->profissionais->getProfissionalLike($decodeUrl);
+		$trabalhos = $this->trabalhos->getPortfolioProfissional($profissionalFilter[0]['id_profissionais']);
+
+		if(count($trabalhos) == 0){
+			return redirect()->to('/');
+		}
+
+		$pages = $this->pages->pages();
+
+		$data = [
+			'titulo'=>"Portfólio {$profissionalFilter[0]['nome_profissional']} | Prado Soluções Digitais",
+			'portfolio'=> $trabalhos,
+			'site'=>$this->formatArray($pages),
+			'config'=> $this->config->getConfig(),
+			'font'=> $this->fontSize[0]['valueConfig'],
+			'profissional'=> $profissionalFilter
+		];
+		
+		return view('portfolio',$data);
 	}
 }

@@ -19,7 +19,7 @@ class Portfolio extends BaseController
 		$data = [
 			'portfolios'=> $this->model->getPortfolios(),
 			'profissionais'=> $this->profissionais->getProfissionais(),
-			'titulo' => 'Trabalho no portfólios - painelSite'
+			'titulo' => 'Trabalho | Portfólio - painelSite'
 		];
 
 		return view('portfolioCadastrar',$data);

@@ -28,4 +28,8 @@ class PortfolioModel extends Model
     {
        return $this->where('id_portifolio',$id)->set($data)->update();
     }
+    public function getPortfolioProfissional($param)
+    {
+        return $this->where('id_profissional_port',$param)->findAll();
+    }
 }

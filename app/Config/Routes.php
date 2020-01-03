@@ -80,6 +80,8 @@ $routes->get('sitemap', 'SitemapGenerator::index');
 
 
 $routes->get('/', 'Home::index');
+$routes->get('/nossa-equipe', 'Home::profissionais');
+$routes->get('/portfolio/(:any)', 'Home::portfolio/$1');
 $routes->get('/artigos/(:any)','Home::view/$1');
 $routes->get('/artigos','Home::artigos');
 $routes->get('/painel', 'Admin::index');

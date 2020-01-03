@@ -41,7 +41,7 @@
                             <a href="/artigos">Artigos</a>
                         </li>
                         <li>
-                            <a href="/painel" target="_seft">Painel</a>
+                            <a href="/nossa-equipe" >Nossa Equipe</a>
                         </li>
                     </ul>
                 </nav>
