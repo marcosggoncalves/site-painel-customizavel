@@ -17,7 +17,7 @@ class Artigos extends BaseController
 		$data = [
 			'artigos'=> $this->model->getArtigos(),
 			'titulo' => 'Artigos - painelSite',
-			'autor'=>"Publicado por: {$this->session->get('login')['user'][0]['usuario']}  - {$this->session->get('login')['user'][0]['setor']} "
+			'autor'=>"Publicado por {$this->session->get('login')['user'][0]['usuario']} ({$this->session->get('login')['user'][0]['setor']}) "
 		];
 
 		return view('artigosCadastrar',$data);
@@ -37,7 +37,7 @@ class Artigos extends BaseController
 			'imagem-artigo' => [
                 'uploaded[imagem-artigo]',
                 'mime_in[imagem-artigo,image/jpg,image/jpeg,image/gif,image/png]',
-                'max_size[imagem-artigo,4096]'
+                'max_size[imagem-artigo,7096]'
             ],
 		]);
 		

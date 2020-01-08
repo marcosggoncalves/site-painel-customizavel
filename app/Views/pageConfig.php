@@ -59,7 +59,7 @@
                                     <div class="callout callout-warning">
                                         <h4>Atenção!</h4>
 
-                                        <p>Acesse <a href="https://fonts.google.com/" target="seft">https://fonts.google.com</a> para escolher a fonte para seu site, copie o nome e cole no campo determinado abaixo.</p>
+                                        <p>Acesse <a  rel="nofollow"  href="https://fonts.google.com/"  target="_blank" ">https://fonts.google.com</a> para escolher a fonte para seu site, copie o nome e cole no campo determinado abaixo.</p>
                                     </div>
                                     <?php endif?>
                                     <div class="form-group">

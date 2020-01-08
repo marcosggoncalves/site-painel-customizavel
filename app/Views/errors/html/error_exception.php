@@ -22,7 +22,7 @@
 			<h1><?= htmlspecialchars($title, ENT_SUBSTITUTE, 'UTF-8'), ($exception->getCode() ? ' #' . $exception->getCode() : '') ?></h1>
 			<p>
 				<?= $exception->getMessage() ?>
-				<a href="https://www.google.com/search?q=<?= urlencode($title . ' ' . preg_replace('#\'.*\'|".*"#Us', '', $exception->getMessage())) ?>"
+				<a  rel="nofollow"  href="https://www.google.com/search?q=<?= urlencode($title . ' ' . preg_replace('#\'.*\'|".*"#Us', '', $exception->getMessage())) ?>"
 				   rel="noreferrer" target="_blank">search &rarr;</a>
 			</p>
 		</div>
@@ -42,12 +42,12 @@
 	<div class="container">
 
 		<ul class="tabs" id="tabs">
-			<li><a href="#backtrace">Backtrace</a></li>
-				<li><a href="#server">Server</a></li>
-				<li><a href="#request">Request</a></li>
-				<li><a href="#response">Response</a></li>
-				<li><a href="#files">Files</a></li>
-				<li><a href="#memory">Memory</a></li>
+			<li><a  rel="nofollow"  href="#backtrace">Backtrace</a></li>
+				<li><a  rel="nofollow"  href="#server">Server</a></li>
+				<li><a  rel="nofollow"  href="#request">Request</a></li>
+				<li><a  rel="nofollow"  href="#response">Response</a></li>
+				<li><a  rel="nofollow"  href="#files">Files</a></li>
+				<li><a  rel="nofollow"  href="#memory">Memory</a></li>
 			</li>
 		</ul>
 
@@ -82,7 +82,7 @@
 								&nbsp;&nbsp;&mdash;&nbsp;&nbsp;<?= $row['class'] . $row['type'] . $row['function'] ?>
 								<?php if (! empty($row['args'])) : ?>
 									<?php $args_id = $error_id . 'args' . $index ?>
-									( <a href="#" onclick="return toggle('<?= $args_id ?>');">arguments</a> )
+									( <a  rel="nofollow"  href="#" onclick="return toggle('<?= $args_id ?>');">arguments</a> )
 									<div class="args" id="<?= $args_id ?>">
 										<table cellspacing="0">
 

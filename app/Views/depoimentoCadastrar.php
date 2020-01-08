@@ -67,8 +67,8 @@
                                         <?=$depoimento['created']?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$depoimento['id_depoimento']?>">Excluir</a>
-                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$depoimento['id_depoimento']?>">Editar</a>
+                                        <a  rel="nofollow"  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$depoimento['id_depoimento']?>">Excluir</a>
+                                        <a  rel="nofollow"  class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$depoimento['id_depoimento']?>">Editar</a>
 
                                         <div class="modal fade" id="delete<?=$depoimento['id_depoimento']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">

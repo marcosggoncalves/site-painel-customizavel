@@ -23,7 +23,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/painel"><b>Painel</b>Site</a>
+            <a  rel="nofollow"  href="/painel"><b>Painel</b>Site</a>
         </div>
         <div class="login-box-body ">
             <p class="login-box-msg">Para acessar realize o login</p>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
-                        <a href="/">Voltar para site</a>
+                        <a  rel="nofollow"  href="/">Voltar para site</a>
                     </div>
                     <div class="col-xs-4">
                         <button type="submit" class="btn btn-success btn-block btn-flat"><i class="fa fa-fw fa-check"></i>Entrar</button>

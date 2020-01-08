@@ -6,19 +6,24 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
-    $xmlString .=   '<url>';
-    $xmlString .=  '<loc>'.site_url('/').'</loc>';
-    $xmlString .= ' <priority>0.5</priority><changefreq>daily</changefreq>';
-    $xmlString .=  '</url>';
 
-    $xmlString .=   '<url>';
-    $xmlString .=  '<loc>'.site_url('/artigos').'</loc>';
-    $xmlString .= ' <priority>0.5</priority><changefreq>daily</changefreq>';
-    $xmlString .=  '</url>';
+    $urlSite = [
+        '/',
+        '/artigos',
+        '/nossa-equipe',
+        '/painel'
+    ];
+
+    foreach ($urlSite as $site) {
+        $xmlString .=   '<url>';
+        $xmlString .=  '<loc>'.base_url($site) .'</loc>';
+        $xmlString .= ' <priority>0.5</priority><changefreq>daily</changefreq>';
+        $xmlString .=  '</url>';
+    }
 
     foreach ($artigos as $artigo) {
         $xmlString .=   '<url>';
-        $xmlString .=  '<loc>'.site_url('/artigos/') . $artigo['slug'] .'</loc>';
+        $xmlString .=  '<loc>'.base_url('/artigos/') . $artigo['slug'] .'</loc>';
         $xmlString .= ' <priority>0.5</priority><changefreq>daily</changefreq>';
         $xmlString .=  '</url>';
     }

@@ -74,8 +74,8 @@
                                         <?=$portfolio['titulo_portifolio']?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$portfolio['id_portifolio']?>">Excluir</a>
-                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$portfolio['id_portifolio']?>">Editar</a>
+                                        <a  rel="nofollow"  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$portfolio['id_portifolio']?>">Excluir</a>
+                                        <a  rel="nofollow"  class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$portfolio['id_portifolio']?>">Editar</a>
                                         <!-- Modal -->
                                         <div class="modal fade" id="delete<?=$portfolio['id_portifolio']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">

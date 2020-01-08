@@ -33,7 +33,7 @@ class Profissionais extends BaseController
 			'imagem' => [
                 'uploaded[imagem]',
                 'mime_in[imagem,image/jpg,image/jpeg,image/gif,image/png]',
-                'max_size[imagem,4096]'
+                'max_size[imagem,7096]'
             ],
 		]);
 		

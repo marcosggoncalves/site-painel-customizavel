@@ -1,216 +1,219 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="site/img/fav.png">
+		<!-- Author Meta -->
+		<meta name="description" content="<?=$titulo?>">
+        <meta name="keywords" content="Prado Soluções Digitais, Tecnologia, Soluções, Marketing Digital, Digital ">
+        <meta name="robots" content="index">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title><?=$titulo?></title>
 
-<head>
-    <meta charset="UTF-8">
-    <title><?=$titulo?></title>
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="siteStyle/css/variaveis.css">
-    <link rel="stylesheet" type="text/css" href="siteStyle/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=<?=$font?>" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?=$titulo?>">
-    <meta name="keywords" content="Prado Soluções Digitais, Tecnologia, Soluções, Marketing Digital, Digital ">
-    <meta name="robots" content="index">
-</head>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="site/css/linearicons.css">
+			<link rel="stylesheet" href="site/css/font-awesome.min.css">
+			<link rel="stylesheet" href="site/css/jquery.DonutWidget.min.css">
+			<link rel="stylesheet" href="site/css/bootstrap.css">
+			<link rel="stylesheet" href="site/css/owl.carousel.css">
+			<link rel="stylesheet" href="site/css/main.css">
+		</head>
+		<body>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="header-layout">
-                <div class="logo">
-                    <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" >
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <a onclick="rolar('#home')">Home</a>
-                        </li>
-                        <li>
-                            <a onclick="rolar('#serviços')">Serviços</a>
-                        </li>
-                        <li>
-                            <a onclick="rolar('#depoimentos')">Depoimentos</a>
-                        </li>
-                        <li>
-                            <a href="/artigos">Artigos</a>
-                        </li>
-                        <li>
-                            <a href="/nossa-equipe" >Nossa Equipe</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="btn-especial">
-                    <a onclick="rolar('#fale-conosco')">Fale Conosco</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="banner" id="home">
-            <div class="container">
-                <div class="banner-container container">
-                    <div class="banner-container-img">
-                        <img src="<?=$site['Banner']['img_page']?>" alt="Imagem banner container">
-                    </div>
-                    <div class="banner-container-texto">
-                        <div>
+			<!-- Start Header Area -->
+			<header class="default-header">			
+				<nav class="navbar navbar-expand-lg  navbar-light">
+					<div class="container">
+						  <a class="navbar-brand" href="/">
+                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" width="120px">
+						  </a>
+						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						    <span class="navbar-toggler-icon"></span>
+						  </button>
+
+						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+						    <ul class="navbar-nav">
+								<li><a href="#home">Home</a></li>
+								<li><a href="#servicos">Serviços</a></li>
+								<li><a href="#depoimentos">Depoimentos</a></li>
+								<li><a href="#artigos">Artigos</a></li>
+								<li><a href="#fale-conosco">Fale Conosco</a></li>
+						    </ul>
+						  </div>						
+					</div>
+				</nav>
+			</header>
+			<!-- End Header Area -->
+
+			<!-- start banner Area -->
+			<section class="banner-area relative" id="home">
+				<div class="overlay-bg overlay"></div>
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-center">
+						<div class="banner-content col-lg-6 col-md-12">
+							<h1 class="text-uppercase">
                             <?=$site['Banner']['title_page']?>
-                        </div>
-                        <div>
-                            <?=$site['Banner']['desc_page']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="serviços">
-            <div class="container">
-                <div>
-                    <div class="container-titulo">
-                        <?=$site['Serviços']['title_page']?>
-                        <?=$site['Serviços']['desc_page']?>
-                    </div>
-                    <div class="servicos owl-carousel">
-                    <?php foreach($servicos as $servico): ?>
-                        <div class="card ">
-                            <div class="card-titulo">
-                                <h1><?=$servico['titulo_servico']?></h1>
-                            </div>
-                            <div class="card-corpo">
-                                <p><?=$servico['descricao_servico']?></p>
-                            </div>
-                        </div>
-                    <?php endforeach?>
-                </div>
-            </div>
-        </section>
-        <section id="depoimentos" class="container-variavel">
-            <div class="container">
-                <div>
-                    <div class="container-titulo">
-                         <?=$site['Depoimentos']['title_page']?>
-                         <?=$site['Depoimentos']['desc_page']?>
-                    </div>
-                    <div class="depoimentos owl-carousel">
-                    <?php foreach($depoimentos as $depoimento): ?>
-                        <div class="card ">
-                            <div class="card-titulo">
-                                <h1><?=$depoimento['cliente_depoimento']?></h1>
-                            </div>
-                            <div class="card-corpo">
-                                <p><?=$depoimento['descricao_depoimento']?></p>
-                            </div>
-                        </div>
-                    <?php endforeach?>
-                </div>
-            </div>
-        </section>
-        <section id="artigos">
-            <div class="container">
-                <div>
-                    <div class="container-titulo">
-                        <?=$site['Artigos']['title_page']?>
-                        <?=$site['Artigos']['desc_page']?>
-                    </div>
-                    <div class="artigos owl-carousel">
-                        <?php foreach($artigos as $artigo): ?>
-                            <div class="card ">
-                                <div class="card-titulo">
-                                    <h1><?=$artigo['titulo']?></h1>
+							</h1>
+							<div class="pb-20 text-white">
+							    <?=$site['Banner']['desc_page']?>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<img class="img-fluid" src="<?=$site['Banner']['img_page']?>" alt="">
+						</div>												
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->	
+
+			<!-- Start service Area -->
+			<section class="service-area section-gap" id="servicos">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-8">
+							<div class="title text-center">
+								<div class="mb-10"><?=$site['Serviços']['title_page']?></div>
+                                <?=$site['Serviços']['desc_page']?> 
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+                        <?php foreach($servicos as $servico): ?>
+                            <div class="col-lg-4 ">
+                                <div class="single-service mt-20">
+                                    <span class="lnr lnr-cog"></span>
+                                    <h4 class="pt-60 pb-20"><?=$servico['titulo_servico']?></h4>
+                                    <p><?=$servico['descricao_servico']?></p>
                                 </div>
-                                <div class="ler-mais">
-                                    <a href="artigos/<?=$artigo['slug']?>" class="ler-mais">Ver mais >></a>
+                            </div>	
+                        <?php endforeach?>									
+					</div>
+				</div>	
+			</section>
+
+			<section class="testimonial-area relative section-gap" id="depoimentos">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-30 col-lg-8">
+							<div class="title text-center">
+								<div class="mb-10">
+                                    <h1 class="text-white"><?=$site['Depoimentos']['title_page']?></h1>
                                 </div>
-                            </div>
-                        <?php endforeach?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="fale-conosco" class="container-variavel-opcional ">
-            <div class="container">
-                <div>
-                    <div class="container-titulo">
-                        <?=$site['Contato']['title_page']?>
-                        <?=$site['Contato']['desc_page']?>
-                    </div>
-                    <div class="fale-conosco">
-                      <?php
-                        $session = \Config\Services::session();
-                        if($session->getFlashdata('save')):
-                            if($session->getFlashdata('save')['status'] == true) :?>
-                                <div class="success">
-                                    <h4><i class="icon fa fa-check"></i> Mensagem enviada !</h4>
-                                    <?php
-                                        echo $session->getFlashdata('save')['message'];
-                                    ?>
-                                    <div>
-                                        <?php print_r($session->getFlashdata('save')['validate'])?>
+								<div class="text-white">
+                                    <?=$site['Depoimentos']['desc_page']?>
+                                </div>
+							</div>
+						</div>
+					</div>		
+					<div class="row">
+						<div class="active-testimonial">
+                            <?php foreach($depoimentos as $depoimento): ?>
+                                <div class="single-testimonial item d-flex flex-row">
+                                    <div class="desc">
+                                        <p><?=$depoimento['descricao_depoimento']?></p>
+                                        <h4 mt-30><?=$depoimento['cliente_depoimento']?></h4>
                                     </div>
                                 </div>
-                            <?php else:?>
-                            <div class="alert">
-                                <h4><i class="icon fa fa-ban"></i> Falha encontrada !</h4>
-                                <?php
-                                    echo $session->getFlashdata('save')['message'];
-                                ?>
-                                <div>
-                                    <?php print_r($session->getFlashdata('save')['validate'])?>
+                            <?php endforeach?>						
+						</div>					
+					</div>
+				</div>	
+			</section>
+			<!-- End testimonial Area -->
+			
+
+			<!-- start blog Area -->		
+			<section class="blog-area section-gap" id="artigos">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Artigos</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>					
+					<div class="row">
+                        <?php foreach($artigos as $artigo): ?>
+                            <div class="col-lg-3 col-md-6 single-blog">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="<?=$artigo['img_artigo']?>" alt="">
                                 </div>
+                                <h4><a href="#"><?=$artigo['titulo']?></a></h4>
+                                <p>
+                                 <?=$artigo['previa_artigo']?>
+                                </p>									
                             </div>
-                            <?php endif ?>
-                         <?php endif ?>
-                        <form action="/fale-conosco" method="post">
-                            <div class="container-input">
-                                <input type="text" placeholder="Nome" name="nome">
+                        <?php endforeach?>
+
+					</div>
+				</div>	
+			</section>
+			<!-- end blog Area -->		
+
+			<!-- start contact Area -->		
+			<section class="contact-area section-gap" id="fale-conosco">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-30 col-lg-8">
+							<div class="title text-center">
+								<div class="mb-10">
+                                <?=$site['Contato']['title_page']?>
                             </div>
-                            <div class="container-input">
-                                <input type="number" placeholder="Telefone" name="telefone">
+                                 <?=$site['Contato']['desc_page']?>
+							</div>
+						</div>
+					</div>										
+					<form class="form-area mt-60" id="myForm" action="/fale-conosco" method="post">
+						<div class="row">	
+                            <div class="col-lg-6 form-group">
+
+                                <input type="text" placeholder="Nome" name="nome" class="common-input mb-20 form-control">
+
+                                <input type="email" placeholder="E-mail" name="email"  class="common-input mb-20 form-control" >
+
+                                <input type="number" placeholder="Telefone" name="telefone" class="common-input mb-20 form-control">
+
                             </div>
-                            <div class="container-input">
-                                <input type="email" placeholder="E-mail" name="email">
+                            <div class="col-lg-6 form-group">
+                                <textarea type='text' class="common-textarea mt-10 form-control" placeholder="Escreva sua mensagem" name="mensagem"></textarea>
+                                <button class="primary-btn mt-20">Enviar Mensagem<span class="lnr lnr-arrow-right"></span></button>
                             </div>
-                            <div class="container-input">
-                                <textarea type='text' placeholder="Escreva sua mensagem" name="mensagem"></textarea>
-                            </div>
-                            <input type="submit" value="Enviar mensagem">
-                        </form>
-                    </div>
-                </div>
-                <div class="container-titulo">
-                    <div class="redes-sociais">
-                    <h1>Redes Sociais</h1>
-                        <ul>
+                        </div>
+                        <?php
+                            $session = \Config\Services::session();
+                            echo $session->getFlashdata('save')['message'];
+                            print_r($session->getFlashdata('save')['validate']);
+                        ?>
+					</form>						
+					
+				</div>	
+			</section>
+			<script src="site/js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="site/js/vendor/bootstrap.min.js"></script>
+			<script src="site/js/owl.carousel.min.js"></script>		
+			<script src="site/js/jquery.sticky.js"></script>
+			<script src="site/js/jquery.magnific-popup.min.js"></script>			
+			<script src="site/js/main.js"></script>	
+		</body>
+        <footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row footer-bottom d-flex justify-content-between">
+                         <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos direitos reservados - <b>Prado Soluções Digitais</b></p>
+						<div class="col-lg-4 col-sm-12 footer-social">
                             <?php foreach($redes as $rede):?>
-                                <li><a href="<?=$rede['link_social']?>"><?=$rede['icone_social']?></a></li>
+                                <a href="<?=$rede['link_social']?>" target="_black"><?=$rede['icone_social']?></a>
                             <?php endforeach?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy;Site instituicional - Desenvolvimento 2019 - <?=date('Y')?> </p>
-        </div>
-    </footer>
-</body>
-<script>
-    <?php
-        foreach($config as $prop){
-            if($prop['typeConfig'] === 'color' ||  $prop['typeConfig'] === 'tamanho'){
-                echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
-            }
-        }
-    ?>
-</script>
-<script src="siteStyle/js/carousel.js"></script>
-<script src="siteStyle/js/scroll.js"></script>
-</html>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</html>

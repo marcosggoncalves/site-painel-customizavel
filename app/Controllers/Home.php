@@ -74,9 +74,14 @@ class Home extends BaseController
 	public function artigos(){
 		$pages = $this->pages->pages();
 		$pager = \Config\Services::pager();
+		$artigos = $this->Artigos->orderBy('id_artigo', 'DESC')->paginate(6,'list');
+
+		if(count($artigos) === 0){
+			return redirect()->to('/');
+		}
 
 		$data = [
-			'artigos'=> $this->Artigos->orderBy('id_artigo', 'DESC')->paginate(6,'list'),
+			'artigos'=> $artigos,
 			'site'=>$this->formatArray($pages),
 			'titulo' => 'Artigos publicados | Prado Soluções Digitais',
 			'pager' => $this->Artigos->pager,

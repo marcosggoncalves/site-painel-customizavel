@@ -4,42 +4,39 @@
 <head>
     <title><?=$titulo?></title>
     <meta charset="UTF-8">
-    <link  rel="stylesheet" type="text/css" href="../siteStyle/css/variaveis.css">
-    <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('siteStyle/css/variaveis.css')?>">
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('siteStyle/css/style.css')?>">
     <link href="https://fonts.googleapis.com/css?family=<?=$font?>" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index">
     <meta name="keywords" content="Nossa equipe, Profissionais, Soluções, Prado Soluções Digitais">
 </head>
-
 <body>
     <header>
         <div class="container">
             <div class="header-layout">
-                <div class="logo">
-                   <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>">
-                </div>
-                <nav>
+                <?php include('templates/menu.inc.php');?>
+                    <nav id="open">
                     <ul>
                         <li>
-                            <a href="/#home">Home</a>
+                            <a  rel="nofollow"  href="/#home">Home</a>
                         </li>
                         <li>
-                            <a href="/#serviços">Serviços</a>
+                            <a  rel="nofollow"  href="/#serviços">Serviços</a>
                         </li>
                         <li>
-                            <a href="/#depoimentos">Depoimentos</a>
+                            <a  rel="nofollow"  href="/#depoimentos">Depoimentos</a>
                         </li>
                         <li>
-                            <a href="/#artigos">Artigos</a>
+                            <a  rel="nofollow"  href="/artigos">Artigos</a>
                         </li>
                         <li>
-                            <a href="/nossa-equipe" >Nossa Equipe</a>
+                            <a  rel="nofollow"  href="/nossa-equipe" >Nossa Equipe</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="btn-especial">
-                    <a href="/#fale-conosco" >Fale Conosco</a>
+                    <a  rel="nofollow"  href="/#fale-conosco" >Fale Conosco</a>
                 </div>
             </div>
         </div>
@@ -54,7 +51,7 @@
             <?php foreach($profissionais as $profissional):?>
             <div class="card-retrato">
                 <div class="card-retrato-img" >
-                    <img src="<?=$profissional['curriculo_profissional']?>" />
+                    <img src="<?=base_url($profissional['curriculo_profissional']);?>" />
                 </div>
                 <div class="content">
                     <div class="card-retrato-titulo">
@@ -64,26 +61,13 @@
                         <p><?=$profissional['sobre_profissional']?></p>
                     </div>
                     <div class="btn-portfolio">
-                        <a href="/portfolio/<?=url_title($profissional['nome_profissional'],'-', false);?>">Portfólio >></a>
+                        <a  rel="nofollow"  href="/portfolio/<?=url_title($profissional['nome_profissional'],'-', false);?>">Portfólio >></a>
                     </div>
                 </div>
             </div> 
         <?php endforeach;?>
         </section>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy;Site instituicional - desenvolvimento 2019 - <?=date('Y')?> </p>
-        </div>
-    </footer>
-    <script>
-        <?php
-            foreach($config as $prop){
-                if($prop['typeConfig'] === 'color' || $prop['typeConfig'] === 'tamanho' ){
-                    echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
-                }
-            }
-        ?>
-    </script>
 </body>
+<?php include('templates/footerSite.inc.php');?>
 </html>

@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="callout callout-warning">
                                     <h4>Atenção !</h4>
-                                    <p>Acesse o link <a href="https://adminlte.io/themes/AdminLTE/pages/UI/icons.html" target="_seft">https://adminlte.io/themes/AdminLTE/pages/UI/icons.html</a> escolha o icone de sua rede social, copie o nome e cole com tag 'i', exemplo descrito no campo icone.</p>
+                                    <p>Acesse o link <a  rel="nofollow"  href="https://adminlte.io/themes/AdminLTE/pages/UI/icons.html"  target="_blank" ">https://adminlte.io/themes/AdminLTE/pages/UI/icons.html</a> escolha o icone de sua rede social, copie o nome e cole com tag 'i', exemplo descrito no campo icone.</p>
                                 </div>
                                 <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> Salvar Rede Social</button>
                             </div>
@@ -72,11 +72,11 @@
                                     </td>
                                     <td class='text-center'>
                                         
-                                        <a class="btn btn-primary btn-sm" href="<?=$rede['link_social']?>">Acessar</a>
+                                        <a  rel="nofollow"  class="btn btn-primary btn-sm" href="<?=$rede['link_social']?>">Acessar</a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$rede['id_rede_social']?>">Excluir</a>
-                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$rede['id_rede_social']?>">Editar</a>
+                                        <a  rel="nofollow"  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$rede['id_rede_social']?>">Excluir</a>
+                                        <a  rel="nofollow"  class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$rede['id_rede_social']?>">Editar</a>
 
                                         <div class="modal fade" id="delete<?=$rede['id_rede_social']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">

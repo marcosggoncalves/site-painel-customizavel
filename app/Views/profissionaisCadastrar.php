@@ -66,8 +66,8 @@
                                         <?=$profissional['nome_profissional']?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$profissional['id_profissionais']?>">Excluir</a>
-                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$profissional['id_profissionais']?>">Editar</a>
+                                        <a  rel="nofollow"  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$profissional['id_profissionais']?>">Excluir</a>
+                                        <a  rel="nofollow"  class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$profissional['id_profissionais']?>">Editar</a>
                                         <!-- Modal -->
                                         <div class="modal fade" id="delete<?=$profissional['id_profissionais']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">

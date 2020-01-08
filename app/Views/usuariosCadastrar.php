@@ -79,8 +79,8 @@
                                         <?=$usuario['created']?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$usuario['id_usuario']?>">Excluir</a>
-                                        <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$usuario['id_usuario']?>">Editar</a>
+                                        <a  rel="nofollow"  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?=$usuario['id_usuario']?>">Excluir</a>
+                                        <a  rel="nofollow"  class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?=$usuario['id_usuario']?>">Editar</a>
 
                                         <div class="modal fade" id="delete<?=$usuario['id_usuario']?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">
                                             <div class="modal-dialog" role="document">

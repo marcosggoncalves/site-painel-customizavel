@@ -32,7 +32,7 @@ class configPageSeeder extends \CodeIgniter\Database\Seeder
             [
             'label'=>'Tamanho Logo tipo:',
             'labelConfig'=>'--tamanho-logo',
-            'valueConfig'=>'12rem',
+            'valueConfig'=>'9rem',
             'typeConfig'=>'tamanho'
             ],
             [
@@ -62,7 +62,7 @@ class configPageSeeder extends \CodeIgniter\Database\Seeder
             [
             'label'=>'Fonte principal do site:',
             'labelConfig'=>'--font-size',
-            'valueConfig'=>'Arial',
+            'valueConfig'=>'Roboto',
             'typeConfig'=>'tamanho'
             ]
         ];

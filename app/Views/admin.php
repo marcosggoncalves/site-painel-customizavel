@@ -28,7 +28,7 @@
                         <div class="icon">
                         <i class="ion ion-ios-people"></i>
                         </div>
-                        <a href="/painel-usuarios" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+                        <a  rel="nofollow"  href="/painel-usuarios" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-xs-6">
@@ -40,7 +40,7 @@
                         <div class="icon">
                         <i class="fa  fa-briefcase"></i>
                         </div>
-                        <a href="/painel-servicos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+                        <a  rel="nofollow"  href="/painel-servicos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-xs-6">
@@ -52,7 +52,7 @@
                         <div class="icon">
                         <i class="ion-ios-albums"></i>
                         </div>
-                        <a href="/painel-artigos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+                        <a  rel="nofollow"  href="/painel-artigos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-xs-6">
@@ -64,7 +64,7 @@
                         <div class="icon">
                         <i class="fa fa-commenting-o"></i>
                         </div>
-                        <a href="/painel-depoimentos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+                        <a  rel="nofollow"  href="/painel-depoimentos" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                                         <?=$depoimento['cliente_depoimento']?>
                                     </td>
                                     <td class='text-center'>
-                                       <a class="btn btn-primary btn-sm"> <?=$depoimento['created']?></a>
+                                       <a  rel="nofollow"  class="btn btn-primary btn-sm"> <?=$depoimento['created']?></a>
                                     </td>
                                 <?php endforeach?>
                             </table>
@@ -122,7 +122,7 @@
                                         <?=$servico['titulo_servico']?>
                                     </td>
                                     <td class='text-center'>
-                                    <a class="btn btn-primary btn-sm"> <?=$servico['created']?></a>
+                                    <a  rel="nofollow"  class="btn btn-primary btn-sm"> <?=$servico['created']?></a>
                                     </td>
                                 <?php endforeach?>
                             </table>
@@ -152,7 +152,7 @@
                                         <?=$artigo['titulo']?>
                                     </td>
                                     <td class='text-center'>
-                                        <a class="btn btn-primary btn-sm"> <?=$artigo['created']?></a>
+                                        <a  rel="nofollow"  class="btn btn-primary btn-sm"> <?=$artigo['created']?></a>
                                     </td>
                                 <?php endforeach?>
                             </table>

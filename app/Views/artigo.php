@@ -4,24 +4,22 @@
 <head>
     <title><?=$titulo?></title>
     <meta charset="UTF-8">
-    <link  rel="stylesheet" type="text/css" href="../siteStyle/css/variaveis.css">
-    <link  rel="stylesheet" type="text/css" href="../siteStyle/css/style.css">
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('siteStyle/css/variaveis.css')?>">
+    <link  rel="stylesheet" type="text/css" href="<?=base_url('siteStyle/css/style.css')?>">
     <link href="https://fonts.googleapis.com/css?family=<?=$font?>" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?=$artigo[0]['previa_artigo']?>">
     <meta name="robots" content="index">
     <meta name="author" content="<?=$artigo[0]['autor_artigo']?>">
-    <meta name="keywords" content="<?=$artigo[0]['palavras_chaves_artigo']?>">
+    <meta name="keywords" content="<?=$artigo[0]['palavras_chaves_artigos']?>">
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="header-layout">
-                <div class="logo">
-                   <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>">
-                </div>
-                <nav>
+                <?php include('templates/menu.inc.php');?>
+                    <nav id="open">
                     <ul>
                         <li>
                             <a href="/#home">Home</a>
@@ -33,7 +31,10 @@
                             <a href="/#depoimentos">Depoimentos</a>
                         </li>
                         <li>
-                            <a href="/#artigos">Artigos</a>
+                            <a  rel="nofollow"  href="/artigos">Artigos</a>
+                        </li>
+                        <li>
+                            <a  rel="nofollow"  href="/nossa-equipe" >Nossa Equipe</a>
                         </li>
                     </ul>
                 </nav>
@@ -44,35 +45,23 @@
         </div>
     </header>
     <main class="postagem">
-        <section class='postagem-artigo container'>
+        <article class='postagem-artigo container'>
             <div class="titulo-postagem">
              <h1><?=$artigo[0]['titulo']?></h1>
           </div>
+          <div class="postagem-created">
+            <p><b>Publicado em: </b> <?= date_format(date_create($artigo[0]['created']),"d/m/Y H:i:s")?></p>
+            <p><b><?=$artigo[0]['autor_artigo']?> </b></p>
+            <p><b>Palavras Chaves: </b><?=$artigo[0]['palavras_chaves_artigos']?></p>
+        </div>
           <div class="desc-postagem">
             <figure>
-                <img src="../<?=$artigo[0]['img_artigo']?>" alt="">
+                <img src="<?=base_url($artigo[0]['img_artigo'])?>" alt="<?=$artigo[0]['palavras_chaves_artigos']?>">
             </figure>
             <?=$artigo[0]['publicacao_artigo']?>
-
-            <div class="postagem-created">
-                <p><em><?=$artigo[0]['autor_artigo']?> - <?= date_format(date_create($artigo[0]['created']),"Y/m/d H:i:s")?></em></p>
-            </div>
           </div>
-        </section>
+        </article>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy;Site instituicional - desenvolvimento 2019 - <?=date('Y')?> </p>
-        </div>
-    </footer>
-    <script>
-        <?php
-            foreach($config as $prop){
-                if($prop['typeConfig'] === 'color' || $prop['typeConfig'] === 'tamanho' ){
-                    echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
-                }
-            }
-        ?>
-    </script>
 </body>
+<?php include('templates/footerSite.inc.php');?>
 </html>
