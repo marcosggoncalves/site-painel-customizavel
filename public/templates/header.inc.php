@@ -33,6 +33,7 @@
                         <li><a href="/personalizar?page=Banner"><i class="fa fa-circle-o"></i>Banner principal</a></li>
                         <li><a href="/personalizar?page=Depoimentos"><i class="fa fa-circle-o"></i>Depoimentos</a></li>
                         <li><a href="/personalizar?page=Serviços"><i class="fa fa-circle-o"></i>Serviços</a></li>
+                        <li><a href="/personalizar?page=profissionais"><i class="fa fa-circle-o"></i>Profissionais</a></li>
                         <li><a href="/personalizar?page=Artigos"><i class="fa fa-circle-o"></i>Artigos</a></li>
                         <li><a href="/personalizar?page=Contato"><i class="fa fa-circle-o"></i>Fale Conosco</a></li>
                     </ul>

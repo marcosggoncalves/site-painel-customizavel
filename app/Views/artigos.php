@@ -1,75 +1,80 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="site/img/fav.png">
+		<!-- Author Meta -->
+		<meta name="description" content="<?=$titulo?>">
+        <meta name="keywords" content="Prado Soluções Digitais, Tecnologia, Soluções, Marketing Digital, Digital ">
+        <meta name="robots" content="index">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title><?=$titulo?></title>
 
-<head>
-    <meta charset="UTF-8">
-    <title><?=$titulo?></title>
-    <link  rel="stylesheet" type="text/css" href="<?=base_url('siteStyle/css/variaveis.css')?>">
-    <link  rel="stylesheet" type="text/css" href="<?=base_url('siteStyle/css/style.css')?>">
-    <link href="https://fonts.googleapis.com/css?family=<?=$font?>" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?=$artigo[0]['titulo']?>">
-    <meta name="keywords" content="Artigos, Soluções, Prado Soluções Digitais">
-    <meta name="robots" content="index">
-</head>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="site/css/linearicons.css">
+			<link rel="stylesheet" href="site/css/font-awesome.min.css">
+			<link rel="stylesheet" href="site/css/jquery.DonutWidget.min.css">
+			<link rel="stylesheet" href="site/css/bootstrap.css">
+			<link rel="stylesheet" href="site/css/owl.carousel.css">
+			<link rel="stylesheet" href="site/css/variable.css">
+			<link rel="stylesheet" href="site/css/main.css">
+		</head>
+		<body>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="header-layout">
-                <?php include('templates/menu.inc.php');?>
-                <nav id="open">
-                    <ul>
-                        <li>
-                            <a  rel="nofollow"  href="/#home">Home</a>
-                        </li>
-                        <li>
-                            <a  rel="nofollow"  href="/#serviços">Serviços</a>
-                        </li>
-                        <li>
-                            <a  rel="nofollow"  href="/#depoimentos">Depoimentos</a>
-                        </li>
-                        <li>
-                            <a  rel="nofollow"  href="/artigos">Artigos</a>
-                        </li>
-                        <li>
-                            <a  rel="nofollow"  href="/nossa-equipe" >Nossa Equipe</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="btn-especial">
-                    <a  rel="nofollow"  href="/#fale-conosco" >Fale Conosco</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="container">
-        <section>
-            <div class="container-titulo">
-                <h1>(<?=count($artigos);?>) - Artigos Publicados</h1>
-            </div>
-        </section>
-        <section class="artigos">
-            <?php foreach($artigos as $artigo): ?>
-                <div class="card ">
-                    <div class="card-corpo" >
-                        <img src="<?=base_url($artigo['img_artigo']);?>" />
+			<!-- Start Header Area -->
+			<header class="default-header">			
+				<nav class="navbar navbar-expand-lg  navbar-light">
+					<div class="container">
+						  <a class="navbar-brand" href="/">
+                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" >
+						  </a>
+						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						    <span class="navbar-toggler-icon"></span>
+						  </button>
+
+						  <?php include('templates/menu.inc.php');?>					
+					</div>
+				</nav>
+			</header>
+				
+			<section class="blog-area section-gap" id="artigos">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-50 col-lg-8">
+							<div class="title text-center typography">
+                                <h3>(<?=count($artigos)?>) - Artigos publicados</h3>
+							</div>
+						</div>
+					</div>					
+					<div class="row">
+                        <?php foreach($artigos as $artigo): ?>
+                            <div class="col-lg-3 col-md-6 single-blog ">
+									<a href="artigos/<?=$artigo['slug']?>"><div class="thumb">
+									<img class="img-fluid" src="<?=$artigo['img_artigo']?>" alt="">
+									
+									<h4><?=$artigo['titulo']?></h4>
+									<p>
+									<?=$artigo['previa_artigo']?>
+									</p>	
+								</a>	
+							</div>							
+                    	</div>
+                        <?php endforeach?>
                     </div>
-                    <div class="card-titulo">
-                        <h1><?=$artigo['titulo']?></h1>
-                    </div>
-                    <div class="ler-mais">
-                        <a  rel="nofollow"  href="artigos/<?=$artigo['slug']?>" class="ler-mais">Ver mais >></a>
-                    </div>
-                </div>
-            <?php endforeach?>
-        </section>
-        <?php if(count($artigos) > 6):?>
-            <section class="pagination">
-                <?=$pager->links('list'); ?>
-            </section>
-        <?php endif?>
-    </main>
-</body>
-<?php include('templates/footerSite.inc.php');?>
-</html>
+                    <?php if(count($artigos) >= 6 ):?>
+                        <section class="pagination">
+                           <h1 style="font-size:1rem; padding:10px 15px; border:2px solid #ededed; margin-right:10px;"> <?=$pager->links('list'); ?><h1>
+                        </section>
+                    <?php endif?>
+				</div>	
+			</section>
+		</body>
+		<?php include('templates/footerSite.inc.php');?>
+	</html>

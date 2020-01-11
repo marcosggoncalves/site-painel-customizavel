@@ -28,6 +28,8 @@ class Home extends BaseController
 	public function index()
 	{
 		$pages = $this->pages->pages();
+		$profissionais = $this->profissionais->getProfissionais();
+
 		
 		$data = [
 			'artigos'=> $this->Artigos->getArtigosRecentes(),
@@ -37,7 +39,8 @@ class Home extends BaseController
 			'redes'=>$this->redes->getRedesSocias(),
 			'config'=> $this->config->getConfig(),
 			'titulo' => 'Prado Soluções Digitais',
-			'font'=> $this->fontSize[0]['valueConfig']
+			'font'=> $this->fontSize[0]['valueConfig'],
+			'profissionais'=> $profissionais,
 		];
 		
 		return view('home',$data);
@@ -57,7 +60,8 @@ class Home extends BaseController
 			'artigo'=>$artigo,
 			'site'=>$this->formatArray($pages),
 			'config'=> $this->config->getConfig(),
-			'font'=> $this->fontSize[0]['valueConfig']
+			'font'=> $this->fontSize[0]['valueConfig'],
+			'redes'=>$this->redes->getRedesSocias()
 		];
 
 		return view('artigo',$data);
@@ -86,29 +90,11 @@ class Home extends BaseController
 			'titulo' => 'Artigos publicados | Prado Soluções Digitais',
 			'pager' => $this->Artigos->pager,
 			'config'=> $this->config->getConfig(),
-			'font'=> $this->fontSize[0]['valueConfig']
+			'font'=> $this->fontSize[0]['valueConfig'],
+			'redes'=>$this->redes->getRedesSocias()
 		];
 		
 		return view('artigos',$data);
-	}
-	public function profissionais()
-	{
-		$pages = $this->pages->pages();
-		$profissionais = $this->profissionais->getProfissionais();
-
-		if(count($profissionais) === 0){
-			return redirect()->to('/');
-		}
-
-		$data = [
-			'titulo'=>'Nossa equipe | Prado Soluções Digitais',
-			'profissionais'=> $profissionais,
-			'site'=>$this->formatArray($pages),
-			'config'=> $this->config->getConfig(),
-			'font'=> $this->fontSize[0]['valueConfig']
-		];
-
-		return view('equipe',$data);
 	}
 	public function portfolio($profissional)
 	{
@@ -128,7 +114,8 @@ class Home extends BaseController
 			'site'=>$this->formatArray($pages),
 			'config'=> $this->config->getConfig(),
 			'font'=> $this->fontSize[0]['valueConfig'],
-			'profissional'=> $profissionalFilter
+			'profissional'=> $profissionalFilter,
+			'redes'=>$this->redes->getRedesSocias()
 		];
 		
 		return view('portfolio',$data);

@@ -41,6 +41,13 @@ class pageSeeder extends \CodeIgniter\Database\Seeder
                 'is_img_page'=>'false'
             ],
             [
+                'title_page'=>'<h1>Profissionais<h1>',
+                'desc_page'=>'<p>Conheça nossos profissionais, equipe totalmente treinada.</p>',
+                'img_page'=>'none',
+                'page'=>'profissionais',
+                'is_img_page'=>'false'
+            ],
+            [
                 'title_page'=>'Imagem header',
                 'desc_page'=>'Imagem header',
                 'img_page'=>'/uploads/logo.png',

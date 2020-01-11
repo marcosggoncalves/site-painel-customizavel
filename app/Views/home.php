@@ -23,6 +23,7 @@
 			<link rel="stylesheet" href="site/css/jquery.DonutWidget.min.css">
 			<link rel="stylesheet" href="site/css/bootstrap.css">
 			<link rel="stylesheet" href="site/css/owl.carousel.css">
+			<link rel="stylesheet" href="site/css/variable.css">
 			<link rel="stylesheet" href="site/css/main.css">
 		</head>
 		<body>
@@ -32,21 +33,12 @@
 				<nav class="navbar navbar-expand-lg  navbar-light">
 					<div class="container">
 						  <a class="navbar-brand" href="/">
-                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" width="120px">
+                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" >
 						  </a>
 						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						    <span class="navbar-toggler-icon"></span>
 						  </button>
-
-						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
-						    <ul class="navbar-nav">
-								<li><a href="#home">Home</a></li>
-								<li><a href="#servicos">Serviços</a></li>
-								<li><a href="#depoimentos">Depoimentos</a></li>
-								<li><a href="#artigos">Artigos</a></li>
-								<li><a href="#fale-conosco">Fale Conosco</a></li>
-						    </ul>
-						  </div>						
+						  <?php include('templates/menu.inc.php');?>					
 					</div>
 				</nav>
 			</header>
@@ -98,6 +90,39 @@
 				</div>	
 			</section>
 
+			<section class="team-area pt-200 mb-60" id="equipe">
+				<div class="container">	
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-30 col-lg-8">
+							<div class="title text-center">
+								<div class="mb-10">
+                                    <?=$site['profissionais']['title_page']?>
+                                </div>
+								<div>   
+								<?=$site['profissionais']['desc_page']?>
+                                </div>
+							</div>
+						</div>	
+					</div>			
+					<div class="row justify-content-center d-flex align-items-center">
+						<?php foreach($profissionais as $profissional):?>
+							<div class="col-md-3 single-team">
+								<div class="thumb">
+									<img class="img-fluid" src="<?=base_url($profissional['curriculo_profissional']);?>" alt="">
+									<div class="align-items-center justify-content-center d-flex">
+										<a href="/portfolio/<?=$profissional['nome_profissional']?>" class="genric-btn primary">Acessar portfólio</a>
+									</div>
+								</div>
+								<div class="meta-text mt-30 text-center">
+									<h4><?=$profissional['nome_profissional']?></h4>								    	
+								</div>
+							</div>
+						<?php endforeach;?>
+					</div>
+				</div>	
+			</section>
+			<!-- End team Area -->
+
 			<section class="testimonial-area relative section-gap" id="depoimentos">
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
@@ -136,22 +161,24 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">Artigos</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+								<?=$site['Artigos']['title_page']?>
+								<?=$site['Artigos']['desc_page']?>
 							</div>
 						</div>
 					</div>					
 					<div class="row">
                         <?php foreach($artigos as $artigo): ?>
                             <div class="col-lg-3 col-md-6 single-blog">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="<?=$artigo['img_artigo']?>" alt="">
-                                </div>
-                                <h4><a href="#"><?=$artigo['titulo']?></a></h4>
-                                <p>
-                                 <?=$artigo['previa_artigo']?>
-                                </p>									
-                            </div>
+									<a href="artigos/<?=$artigo['slug']?>"><div class="thumb">
+									<img class="img-fluid" src="<?=$artigo['img_artigo']?>" alt="">
+									
+									<h4><?=$artigo['titulo']?></h4>
+									<p>
+									<?=$artigo['previa_artigo']?>
+									</p>	
+								</a>	
+							</div>							
+                    	</div>
                         <?php endforeach?>
 
 					</div>
@@ -164,10 +191,10 @@
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-30 col-lg-8">
-							<div class="title text-center">
+							<div class="title-contato text-center">
 								<div class="mb-10">
-                                <?=$site['Contato']['title_page']?>
-                            </div>
+                                	<?=$site['Contato']['title_page']?>
+                            	</div>
                                  <?=$site['Contato']['desc_page']?>
 							</div>
 						</div>
@@ -197,23 +224,6 @@
 					
 				</div>	
 			</section>
-			<script src="site/js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="site/js/vendor/bootstrap.min.js"></script>
-			<script src="site/js/owl.carousel.min.js"></script>		
-			<script src="site/js/jquery.sticky.js"></script>
-			<script src="site/js/jquery.magnific-popup.min.js"></script>			
-			<script src="site/js/main.js"></script>	
 		</body>
-        <footer class="footer-area section-gap">
-				<div class="container">
-					<div class="row footer-bottom d-flex justify-content-between">
-                         <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos direitos reservados - <b>Prado Soluções Digitais</b></p>
-						<div class="col-lg-4 col-sm-12 footer-social">
-                            <?php foreach($redes as $rede):?>
-                                <a href="<?=$rede['link_social']?>" target="_black"><?=$rede['icone_social']?></a>
-                            <?php endforeach?>
-						</div>
-					</div>
-				</div>
-			</footer>
+		<?php include('templates/footerSite.inc.php');?>
 	</html>

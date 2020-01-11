@@ -1,25 +1,10 @@
-<div class="menu-header">
-    <div class="logo">
-        <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>">
-    </div>
-    <div class="menu">
-        <img src="<?=base_url('img/menu.png')?>" id="menu">
-    </div>
+<div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li><a href="/#home">Home</a></li>
+        <li><a href="/#servicos">Serviços</a></li>
+        <li><a href="/#equipe">Profissionais</a></li>
+        <li><a href="/#depoimentos">Depoimentos</a></li>
+        <li><a href="/artigos">Artigos</a></li>
+        <li><a href="/#fale-conosco">Fale Conosco</a></li>
+    </ul>
 </div>
-
-<script>
-    let open = ()=>{
-        document.querySelector("#open").style.display = "block";
-    }
-    let close = ()=>{
-        document.querySelector("#open").style.display = "none";
-    }
-
-    document.querySelector('#menu').onclick = () => {
-        if(document.querySelector("#open").style.display != "block"){
-            open();  
-        }else{
-            close();
-        }
-    };
-</script>

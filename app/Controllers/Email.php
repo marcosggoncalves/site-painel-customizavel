@@ -44,7 +44,7 @@ class Email extends BaseController
 
         $data = [
             'status'=>true,
-            'message'=>'Mensagem enviada com sucesso, Aguarde nosso contato.'
+            'message'=>'<h1>Mensagem enviada com sucesso, Aguarde nosso contato.</h1>'
         ];
 
         if($this->enviarEmail($email)){
@@ -61,7 +61,7 @@ class Email extends BaseController
             return redirect()->to('/#fale-conosco');
         }else{
             $data['status'] = false;
-            $data['message'] = 'Não foi possivel enviar mensagem, tente novamente.';
+            $data['message'] = '<h1>Não foi possivel enviar mensagem, tente novamente.</h1>';
             $this->session->setFlashdata('save', $data);
             return redirect()->to('/#fale-conosco');
         }
