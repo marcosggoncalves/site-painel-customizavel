@@ -1,12 +1,13 @@
 <footer class="footer-area section-gap">
     <div class="container">
-        <div class="row footer-bottom d-flex justify-content-between">
-                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos direitos reservados - <b>Prado Soluções Digitais</b></p>
-            <div class="col-lg-4 col-sm-12 footer-social">
-                <?php foreach($redes as $rede):?>
-                    <a href="<?=$rede['link_social']?>" target="_black"><?=$rede['icone_social']?></a>
-                <?php endforeach?>
-            </div>
+        <div class="row d-flex justify-content-center text-center">
+            <a href="/painel" target="_seft" class="genric-btn default small mr-10">Painel Site</a>
+            <p class=" footer-text m-0 text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos direitos reservados - <b>Prado Soluções Digitais</b></p>
+        </div>
+        <div class="footer-social">
+            <?php foreach($redes as $rede):?>
+                <a href="<?=$rede['link_social']?>" target="_black"><?=$rede['icone_social']?></a>
+            <?php endforeach?>
         </div>
     </div>
 </footer>

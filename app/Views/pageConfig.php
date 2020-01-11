@@ -34,18 +34,13 @@
                                         Essa sessão foi criada com objetivo para alterar opções gráficas do site e inregrações com outras ferramentas. Em relações a opções gráficas, mantenha as proporções e combinações de cores, logo abaixo, disponibilizarei artigo sobre esse assunto.</p>
                                     <ul>
                                         <span><b>Opções gráficas</b></span>
-                                        <li>Cor de cabeçalho do site</li>
                                         <li>Cor principal do site</li>
-                                        <li>Cor de texto 1 e 2</li>
                                         <li>Tamanho da logo tipo de site</li>
-                                        <li>Fonte do site</li>
-                                        <li>Cor de fundo do site</li>
                                         <li>Cor do dos containers do site</li>
                                     </ul>
                                     <ul>
                                         <span><b>Outras configurações</b></span>
                                         <li>Email de contato</li>
-                                        <li>Api mailchimp</li>
                                     </ul>
                                 </div>
                             </div>

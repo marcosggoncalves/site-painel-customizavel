@@ -806,6 +806,10 @@ th {
     }
 }
 
+article h1 {
+    margin-bottom: 1rem;
+}
+
 .row.no-margin {
     margin-left: 0;
     margin-right: 0;
@@ -2217,6 +2221,9 @@ h6 {
 }
 
 @media (min-width: 768px) {
+    .team-area .thumb img {
+        height: 280px;
+    }
     .dropdown .dropdown-menu {
         display: block;
         opacity: 0;
@@ -2590,7 +2597,7 @@ h6 {
 .team-area .thumb img {
     display: block;
     width: 100%;
-    height: 280px;
+    height: 100%;
 }
 
 .team-area .thumb div span {
@@ -2779,7 +2786,8 @@ h6 {
 }
 
 .footer-social {
-    text-align: right;
+    margin-top: 2rem;
+    text-align: center;
 }
 
 .footer-social a {
@@ -2810,7 +2818,7 @@ h6 {
 
 @media (max-width: 991px) {
     .footer-social {
-        text-align: left;
+        text-align: center;
         margin-top: 20px;
     }
 }
