@@ -10,8 +10,12 @@
     $urlSite = [
         '/',
         '/artigos',
-        '/nossa-equipe',
-        '/painel'
+        '/painel',
+        '/#contato',
+        '/#servicos',
+        '/#equipe',
+        '/#depoimentos',
+        '/#fale-conosco'
     ];
 
     foreach ($urlSite as $site) {

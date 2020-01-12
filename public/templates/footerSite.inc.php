@@ -14,7 +14,7 @@
 <script>
     <?php
         foreach($config as $prop){
-            if($prop['typeConfig'] === 'text' || $prop['typeConfig'] === 'tamanho' ){
+            if($prop['typeConfig'] === 'text' || $prop['typeConfig'] === 'tamanho'  ||  $prop['typeConfig'] === 'color' ){
                 echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
             }
         }
