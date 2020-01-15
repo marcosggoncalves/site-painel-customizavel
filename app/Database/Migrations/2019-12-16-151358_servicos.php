@@ -19,6 +19,9 @@ class Servicos extends Migration
 			],
 			'descricao_servico'=>[
 				'type'=>'TEXT'
+			],
+			'icon_servico'=>[
+				'type'=>'TEXT'
 			]
 		]);
 		$this->forge->addField("created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP");

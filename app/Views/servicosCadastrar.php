@@ -31,6 +31,15 @@
                                     <label for="descrição">Descrição</label>
                                     <textarea class="form-control" rows="3" id="descrição" name="descrição" placeholder="Descrição serviço"></textarea>
                                 </div>
+                                <div class="callout callout-warning">
+                                    <h4>Atenção!</h4>
+                                    <p>Acesse <a  rel="nofollow"  href="https://linearicons.com/free"  target="_blank">https://linearicons.com/free</a> para escolher o icone  para seu serviço, copie e cole no campo abaixo.</p>
+                                    Exemplo: <img src="img/imgIcone.png" alt="exemplo" width="300">
+                                </div>
+                                <div class="form-group">
+                                    <label for="icone"> Icone:</label>
+                                    <input type="text" class="form-control" id="icone" name="icone" placeholder="Icone serviço">
+                                </div>
                                 <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Salvar Serviço</button>
                             </div>
                         </form>
@@ -109,6 +118,15 @@
                                                                 <div class="form-group">
                                                                     <label for="descrição">Descrição</label>
                                                                     <textarea class="form-control" id="descrição-edit"  name="descrição-edit" placeholder="Descrição serviço"><?=$servico['descricao_servico']?></textarea>
+                                                                </div>
+                                                                <div class="callout callout-warning">
+                                                                    <h4>Atenção!</h4>
+                                                                    <p>Acesse <a  rel="nofollow"  href="https://linearicons.com/free"  target="_blank">https://linearicons.com/free</a> para escolher o icone  para seu serviço, copie e cole no campo abaixo.</p>
+                                                                    Exemplo: <img src="img/imgIcone.png" alt="exemplo" width="300">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="icone-edit"> Icone:</label>
+                                                                    <input type="text" class="form-control" id="icone-edit" name="icone-edit" placeholder="Icone serviço"  value="<?=$servico['icon_servico']?>"/>
                                                                 </div>
                                                                 <button type="submit" class="btn btn-success">Salvar Alteração</button>
                                                             </div>

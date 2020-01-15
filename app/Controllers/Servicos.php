@@ -27,6 +27,7 @@ class Servicos extends BaseController
 		$validate = $this->validate([
 			'titulo'  => 'required',
 			'descrição'  => 'required',
+			'icone'  => 'required',
 		]);
 		
 		if(!$validate){
@@ -49,7 +50,8 @@ class Servicos extends BaseController
 
 			$servico = [
 				'descricao_servico'=>$this->request->getVar('descrição'),
-				'titulo_servico'=> $this->request->getVar('titulo')
+				'titulo_servico'=> $this->request->getVar('titulo'),
+				'icon_servico'=> $this->request->getVar('icone')
 			];
 
 			$save = $this->model->newServico($servico);
@@ -90,6 +92,7 @@ class Servicos extends BaseController
 		$validate = $this->validate([
 			'titulo-edit'  => 'required',
 			'descrição-edit'  => 'required',
+			'icone-edit'  => 'required',
 		]);
 		
 		if(!$validate){
@@ -105,7 +108,8 @@ class Servicos extends BaseController
 
 		$servicoEdit = [
 			'descricao_servico'=>$this->request->getVar('descrição-edit'),
-			'titulo_servico'=> $this->request->getVar('titulo-edit')
+			'titulo_servico'=> $this->request->getVar('titulo-edit'),
+			'icon_servico'=> $this->request->getVar('icone-edit')
 		];
 
 		$data = [

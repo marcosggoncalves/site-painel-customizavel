@@ -14,7 +14,7 @@ class ArtigosModel extends Model
     public function getArtigosRecentes()
     {
         $this->orderBy('id_artigo', 'DESC');
-        return $this->findAll(6);
+        return $this->findAll(4);
     }
     public function newArtigo($artigo)
     {

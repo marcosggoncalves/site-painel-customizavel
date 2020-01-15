@@ -49,7 +49,7 @@
 				<div class="overlay-bg overlay"></div>
 				<div class="container">
 					<div class="row fullscreen d-flex align-items-center justify-content-center">
-						<div class="banner-content col-lg-6 col-md-12">
+						<div class="banner-content col-lg-12">
 							<h1 class="text-uppercase">
                             <?=$site['Banner']['title_page']?>
 							</h1>
@@ -57,9 +57,9 @@
 							    <?=$site['Banner']['desc_page']?>
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<!-- <div class="col-lg-6">
 							<img class="img-fluid" src="<?=$site['Banner']['img_page']?>" alt="">
-						</div>												
+						</div>												 -->
 					</div>
 				</div>
 			</section>
@@ -80,7 +80,7 @@
                         <?php foreach($servicos as $servico): ?>
                             <div class="col-lg-4 ">
                                 <div class="single-service mt-20">
-                                    <span class="lnr lnr-cog"></span>
+									<?=$servico['icon_servico']?>
                                     <h4 class="pt-60 pb-20"><?=$servico['titulo_servico']?></h4>
                                     <p><?=$servico['descricao_servico']?></p>
                                 </div>

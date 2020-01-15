@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class ServicosModel extends Model
 {
     protected $table = 'servicos';
-    protected $allowedFields = ['descricao_servico', 'titulo_servico'];
+    protected $allowedFields = ['descricao_servico', 'titulo_servico','icon_servico'];
 
     public function getServicos()
     {
