@@ -113,9 +113,9 @@
 										<a href="/portfolio/<?=$profissional['nome_profissional']?>" class="genric-btn primary">Acessar portfólio</a>
 									</div>
 								</div>
-								<div class="meta-text mt-30 text-center">
+								<!-- <div class="meta-text mt-30 text-center">
 									<h4><?=$profissional['nome_profissional']?></h4>								    	
-								</div>
+								</div> -->
 							</div>
 						<?php endforeach;?>
 					</div>
