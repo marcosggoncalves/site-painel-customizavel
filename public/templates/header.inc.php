@@ -8,7 +8,7 @@
             <span class="logo-xs"><b>Painel</b>Site</span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <a class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
         </nav>
@@ -18,11 +18,11 @@
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
-                <li class="active"><a href="#"><i class="fa fa-user"></i> <span>Logado : <?=$usuarioLogado?></span></a></li>
+                <li class="active"><a ><i class="fa fa-user"></i> <span>Logado : <?=$usuarioLogado?></span></a></li>
                 <li><a href="/painel"><i class="fa fa-tachometer"></i> <span>Painel Administrativo</span></a></li>
                 <li><a href="/painel-configuracoes-gerais"><i class="fa fa-television"></i> <span>Configurações Gerais</span></a></li>
                 <li class="treeview">
-                    <a href="#">
+                    <a>
                         <i class="fa fa-file"></i> <span>Páginas - Container</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
