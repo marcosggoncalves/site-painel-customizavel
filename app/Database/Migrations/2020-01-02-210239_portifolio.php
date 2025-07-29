@@ -28,8 +28,9 @@ class Portifolio extends Migration
 				'constraint'=>5,
 			]
 		]);
-		$this->forge->addForeignKey('id_profissional_port','profissionais','id_profissionais','CASCADE','CASCADE');
-		$this->forge->addKey('id_portifolio',true);
+		
+		$this->forge->addKey('id_portifolio',true); 
+	
 		$created = $this->forge->createTable('portifolio');
 
 		if($created){

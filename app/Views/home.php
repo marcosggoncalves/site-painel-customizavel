@@ -29,9 +29,9 @@
 		<body>
 
 			<!-- Start Header Area -->
-			<header class="default-header">			
+			<header class="default-header" data-widget="tree">			
 				<nav class="navbar navbar-expand-lg  navbar-light">
-					<div class="container">
+					<ul class="container">
 						  <a class="navbar-brand" href="/">
                             <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" >
 						  </a>
@@ -39,7 +39,7 @@
 						    <span class="navbar-toggler-icon"></span>
 						  </button>
 						  <?php include('templates/menu.inc.php');?>					
-					</div>
+					</ul>
 				</nav>
 			</header>
 			<!-- End Header Area -->
@@ -106,16 +106,16 @@
 					</div>			
 					<div class="row justify-content-center d-flex align-items-center">
 						<?php foreach($profissionais as $profissional):?>
-							<div class="col-md-3 single-team">
+							<div class="col-md-2 single-team">
 								<div class="thumb">
 									<img class="img-fluid" src="<?=base_url($profissional['curriculo_profissional']);?>" alt="">
 									<div class="align-items-center justify-content-center d-flex">
-										<a href="/portfolio/<?=$profissional['nome_profissional']?>" class="genric-btn primary">Acessar portfólio</a>
+										<a href="/portfolio/<?=$profissional['nome_profissional']?>" class="genric-btn primary">Portfólio</a>
 									</div>
 								</div>
-								<!-- <div class="meta-text mt-30 text-center">
+								<div class="meta-text mt-30 text-center">
 									<h4><?=$profissional['nome_profissional']?></h4>								    	
-								</div> -->
+								</div>
 							</div>
 						<?php endforeach;?>
 					</div>

@@ -54,7 +54,7 @@
         <!-- Start Generic Area -->
         <article class="about-generic-area section-gap">
             <div class="container border-top-generic">
-                <h3 class="about-title mb-30">
+                <h3 class="about-title mt-2 mb-20 text-center">
                     <?=$artigo[0]['titulo']?>
                 </h3>
                 <div class="row">

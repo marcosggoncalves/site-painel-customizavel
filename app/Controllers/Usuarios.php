@@ -62,6 +62,7 @@ class Usuarios extends BaseController
 				$data['message'] = "Usuário salvo com sucesso !";
 				$data['status'] = true;
 			}
+			
 			$this->session->setFlashdata('save', $data);
 			return redirect('painel-usuarios');
 		}

@@ -16,13 +16,14 @@
     <aside class="main-sidebar">
         <section class="sidebar collapsed">
             <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
+            <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Menu</li>
                 <li class="active"><a ><i class="fa fa-user"></i> <span>Logado : <?=$usuarioLogado?></span></a></li>
                 <li><a href="/painel"><i class="fa fa-tachometer"></i> <span>Painel Administrativo</span></a></li>
                 <li><a href="/painel-configuracoes-gerais"><i class="fa fa-television"></i> <span>Configurações Gerais</span></a></li>
-                <li class="treeview">
-                    <a>
+                <li class="treeview" data-widget="tree"
+>
+                    <a >
                         <i class="fa fa-file"></i> <span>Páginas - Container</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
