@@ -81,7 +81,7 @@
             <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">Copyright &copy;
                 <script>
                     document.write(new Date().getFullYear());
-                </script> Todos direitos reservados - <b>Prado Soluções Digitais</b></p>
+                </script> Todos direitos reservados - <b>Soluções Digitais</b></p>
             <div class="col-lg-4 col-sm-12 footer-social">
                 <?php foreach($redes as $rede):?>
                 <a href="<?=$rede['link_social']?>" target="_black">

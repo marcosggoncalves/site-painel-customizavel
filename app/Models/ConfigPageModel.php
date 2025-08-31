@@ -8,9 +8,9 @@ class ConfigPageModel extends Model
 
     protected $allowedFields = ['labelConfig','typeConfig','valueConfig'];
 
-    public function getConfig()
+    public function getConfig($condicao = ['typeConfig <>', 'oculto'])
     {
-        return $this->findAll();
+        return $this->where($condicao[0], $condicao[1])->findAll();
     }
     public function config($param)
     {

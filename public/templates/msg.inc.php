@@ -6,7 +6,7 @@
                <?=$session->getFlashdata('save')['message']?>
             <div>
                 <?php 
-                    if($session->getFlashdata('save') && $session->getFlashdata('save')['validate']){
+                    if(isset($session->getFlashdata('save')['validate'])){
                         print_r($session->getFlashdata('save')['validate']);
                     }
                 ?>

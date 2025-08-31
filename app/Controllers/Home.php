@@ -23,13 +23,13 @@ class Home extends BaseController
 		$this->config = new ConfigPageModel();
 		$this->trabalhos = new PortfolioModel();
 		$this->profissionais = new ProfissionaisModel();
-		$this->fontSize  = $this->config->config('--font-size');
+		$this->fontSize  = $this->config->config('--fonte');
 	}
 	public function index()
 	{
 		$pages = $this->pages->pages();
+		
 		$profissionais = $this->profissionais->getProfissionais();
-
 		
 		$data = [
 			'artigos'=> $this->Artigos->getArtigosRecentes(),
@@ -37,8 +37,8 @@ class Home extends BaseController
 			'depoimentos'=> $this->Depoimentos->getDepoimentos(),
 			'site'=>$this->formatArray($pages),
 			'redes'=>$this->redes->getRedesSocias(),
-			'config'=> $this->config->getConfig(),
-			'titulo' => 'Prado Soluções Digitais',
+			'config'=> $this->config->getConfig($condicao = ['typeConfig <>', null]),
+			'titulo' => 'Soluções Digitais',
 			'font'=> $this->fontSize[0]['valueConfig'],
 			'profissionais'=> $profissionais,
 		];
@@ -86,7 +86,7 @@ class Home extends BaseController
 		$data = [
 			'artigos'=> $artigos,
 			'site'=>$this->formatArray($pages),
-			'titulo' => 'Artigos publicados | Prado Soluções Digitais',
+			'titulo' => 'Artigos publicados | Soluções Digitais',
 			'pager' => $this->Artigos->pager,
 			'config'=> $this->config->getConfig(),
 			'font'=> $this->fontSize[0]['valueConfig'],
@@ -108,7 +108,7 @@ class Home extends BaseController
 		$pages = $this->pages->pages();
 
 		$data = [
-			'titulo'=>"Portfólio {$profissionalFilter[0]['nome_profissional']} | Prado Soluções Digitais",
+			'titulo'=>"Portfólio {$profissionalFilter[0]['nome_profissional']} | Soluções Digitais",
 			'portfolio'=> $trabalhos,
 			'site'=>$this->formatArray($pages),
 			'config'=> $this->config->getConfig(),

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center text-center">
             <a href="/painel" target="_seft" class="genric-btn default small mr-10">Painel Site</a>
-            <p class=" footer-text m-0 text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos direitos reservados - <b>Prado Soluções Digitais</b></p>
+            <p class=" footer-text m-0 text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos direitos reservados - <b>Soluções Digitais</b></p>
         </div>
         <div class="footer-social">
             <?php foreach($redes as $rede):?>
@@ -13,14 +13,15 @@
 </footer>
 <script>
     <?php
+        echo "document.documentElement.style.setProperty('--fundo-banner', 'url(/".$site['Banner']['img_page'].")');\n" . "document.documentElement.style.setProperty('--fundo-depoimentos', 'url(/".$site['Depoimentos']['img_page'].")');\n" ;
+
         foreach($config as $prop){
-            if($prop['typeConfig'] === 'text' || $prop['typeConfig'] === 'tamanho'  ||  $prop['typeConfig'] === 'color' ){
+            if (in_array($prop['typeConfig'], ['text', 'oculto', 'color'], true)) {
                 echo "document.documentElement.style.setProperty('{$prop["labelConfig"]}', '{$prop["valueConfig"]}');\n" ;
             }
         }
     ?>
 </script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="site/js/vendor/bootstrap.min.js"></script>
 <script src="site/js/owl.carousel.min.js"></script>     

@@ -8,7 +8,7 @@ class pageSeeder extends \CodeIgniter\Database\Seeder
             [
                 'title_page'=>'<h1>Titulo Banner</h1>',
                 'desc_page'=>'<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium ipsum quod soluta magni illum laboriosam, enim odio incidunt omnis earum non, pariatur nihil architecto libero voluptate, molestiae corporis doloremque sit!</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium ipsum quod soluta magni illum laboriosam, enim odio incidunt omnis earum non, pariatur nihil architecto libero voluptate, molestiae corporis doloremque sit!</p>',
-                'img_page'=>'/uploads/banner.png',
+                'img_page'=>'uploads/banner.png',
                 'page'=>'Banner',
                 'is_img_page'=>'true'
             ],
@@ -22,9 +22,9 @@ class pageSeeder extends \CodeIgniter\Database\Seeder
             [
                 'title_page'=>'<h1>Depoimentos</h1>',
                 'desc_page'=>'<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium ipsum quod soluta magni illum laboriosam, enim odio incidunt omnis earum non, pariatur nihil architecto libero voluptate, molestiae corporis doloremque sit!</p>',
-                'img_page'=>'none',
+                'img_page'=> 'uploads/banner.png',
                 'page'=>'Depoimentos',
-                'is_img_page'=>'false'
+                'is_img_page'=>'true'
             ],
             [
                 'title_page'=>'<h1>Artigos</h1>',
@@ -50,7 +50,7 @@ class pageSeeder extends \CodeIgniter\Database\Seeder
             [
                 'title_page'=>'Imagem header',
                 'desc_page'=>'Imagem header',
-                'img_page'=>'/uploads/logo.png',
+                'img_page'=>'uploads/logo.png',
                 'page'=>'Cabeçalho',
                 'is_img_page'=>'true'
             ]

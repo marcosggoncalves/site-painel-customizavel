@@ -7,7 +7,7 @@
 		<link rel="shortcut icon" href="site/img/fav.png">
 		<!-- Author Meta -->
 		<meta name="description" content="<?=$titulo?>">
-        <meta name="keywords" content="Prado Soluções Digitais, Tecnologia, Soluções, Marketing Digital, Digital ">
+        <meta name="keywords" content="Soluções Digitais, Tecnologia, Soluções, Marketing Digital, Digital ">
         <meta name="robots" content="index">
 		<!-- meta character set -->
 		<meta charset="UTF-8">
@@ -33,7 +33,7 @@
 				<nav class="navbar navbar-expand-lg  navbar-light">
 					<ul class="container">
 						  <a class="navbar-brand" href="/">
-                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site['Banner']['desc_page']?>" >
+                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site['Cabeçalho']['page']?>" >
 						  </a>
 						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						    <span class="navbar-toggler-icon"></span>

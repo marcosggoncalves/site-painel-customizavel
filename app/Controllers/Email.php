@@ -72,7 +72,7 @@ class Email extends BaseController
         $emailEnvio = $email['emailEnvio'];
         $headers.= "From: {$email["email"]} <{$email["email"]}>";
 
-        $envio = mail($email['emailEnvio'],'Prado Soluções Digitais',$email["mensagem"], $headers,"-r".$email['email']);
+        $envio = mail($email['emailEnvio'],'Soluções Digitais',$email["mensagem"], $headers,"-r".$email['email']);
 
         if($envio){
             return true;
