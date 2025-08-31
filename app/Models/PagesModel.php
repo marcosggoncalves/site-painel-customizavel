@@ -9,7 +9,7 @@ class PagesModel extends Model
 
     public function getPages($param)
     {
-        return $this->like('page', $param)->from($table)->findAll();
+        return $this->like('page', $param)->findAll();
     }
     public function pages()
     {

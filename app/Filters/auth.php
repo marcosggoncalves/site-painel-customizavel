@@ -16,8 +16,9 @@ class Auth implements FilterInterface
             'message'=> 'Nenhuma sessão encontrada, por favor, acesse o painelSite.'
         ];
 
-        if ($this->session->get('login')['logado'] != 1){
+        if (!$this->session->get('login') || $this->session->get('login')['logado'] != 1){
             $this->session->setFlashdata('save', $data);
+        
             return redirect('entrar');
         }
     }

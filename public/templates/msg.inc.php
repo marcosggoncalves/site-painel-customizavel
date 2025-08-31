@@ -5,7 +5,11 @@
             <h4><i class="icon fa fa-ban"></i>Falha encontrada !</h4>
                <?=$session->getFlashdata('save')['message']?>
             <div>
-                <?php print_r($session->getFlashdata('save')['validate'])?>
+                <?php 
+                    if($session->getFlashdata('save') && $session->getFlashdata('save')['validate']){
+                        print_r($session->getFlashdata('save')['validate']);
+                    }
+                ?>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-    $usuarioLogado = $session->get('login')['user'][0]['usuario'];
+    $usuarioLogado = isset($session->get('login')['user'][0]['usuario']) ? $session->get('login')['user'][0]['usuario'] : 'Visitante';
 ?>
 <div class="wrapper">
     <header class="main-header">

@@ -33,7 +33,7 @@
 				<nav class="navbar navbar-expand-lg  navbar-light">
 					<ul class="container">
 						  <a class="navbar-brand" href="/">
-                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site[0]['desc_page']?>" >
+                            <img src="<?=$site['Cabeçalho']['img_page']?>" alt="<?=$site['Banner']['desc_page']?>" >
 						  </a>
 						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						    <span class="navbar-toggler-icon"></span>
@@ -96,10 +96,10 @@
 						<div class="menu-content pb-30 col-lg-8">
 							<div class="title text-center">
 								<div class="mb-10">
-                                    <?=$site['profissionais']['title_page']?>
+                                    <?=$site['Profissionais']['title_page']?>
                                 </div>
 								<div>   
-								<?=$site['profissionais']['desc_page']?>
+								<?=$site['Profissionais']['desc_page']?>
                                 </div>
 							</div>
 						</div>	
@@ -215,13 +215,14 @@
                                 <button class="primary-btn mt-20">Enviar Mensagem<span class="lnr lnr-arrow-right"></span></button>
                             </div>
                         </div>
-                        <?php
+						<?php
                             $session = \Config\Services::session();
-                            echo $session->getFlashdata('save')['message'];
-                            print_r($session->getFlashdata('save')['validate']);
+							
+							if($session->getFlashdata('save')){
+								echo $session->getFlashdata('save')['message'];
+							}
                         ?>
 					</form>						
-					
 				</div>	
 			</section>
 		</body>

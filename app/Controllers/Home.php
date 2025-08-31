@@ -42,9 +42,8 @@ class Home extends BaseController
 			'font'=> $this->fontSize[0]['valueConfig'],
 			'profissionais'=> $profissionais,
 		];
-		
-		return view('home',$data);
 
+		return view('home',$data);
 	}
 	public function view($slug)
 	{

@@ -4,7 +4,8 @@ use CodeIgniter\Model;
 
 class ConfigPageModel extends Model
 {
-    protected $table = 'configpage';
+    protected $table = 'configPage';
+
     protected $allowedFields = ['labelConfig','typeConfig','valueConfig'];
 
     public function getConfig()
@@ -13,10 +14,10 @@ class ConfigPageModel extends Model
     }
     public function config($param)
     {
-        return $this->like('labelConfig', $param)->from($table)->findAll();
+        return $this->like('labelConfig', $param)->findAll();
     }
     public function editConfigPage($labelConfig,$data)
     {
-       return $this->where('labelConfig',$labelConfig)->set($data)->update();
+       return $this->where('labelConfig', $labelConfig)->set($data)->update();
     }
 }

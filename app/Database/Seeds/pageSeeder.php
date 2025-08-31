@@ -34,17 +34,17 @@ class pageSeeder extends \CodeIgniter\Database\Seeder
                 'is_img_page'=>'false'
             ],
             [
-                'title_page'=>'<h1>Fale Consco<h1>',
+                'title_page'=>'<h1>Fale Consco</h1>',
                 'desc_page'=>'<p>Entre em contato conosco, teremos o maior prazer em lhe atender!</p>',
                 'img_page'=>'none',
                 'page'=>'Contato',
                 'is_img_page'=>'false'
             ],
             [
-                'title_page'=>'<h1>Profissionais<h1>',
+                'title_page'=>'<h1>Profissionais</h1>',
                 'desc_page'=>'<p>Conheça nossos profissionais, equipe totalmente treinada.</p>',
                 'img_page'=>'none',
-                'page'=>'profissionais',
+                'page'=>'Profissionais',
                 'is_img_page'=>'false'
             ],
             [
@@ -56,11 +56,6 @@ class pageSeeder extends \CodeIgniter\Database\Seeder
             ]
         ];
 
-        for ($i=0; $i < count($data); $i++) { 
-            $this->db->query("INSERT INTO pages (title_page, desc_page, img_page, page, is_img_page) VALUES(:title_page:, :desc_page:, :img_page:, :page:, :is_img_page:)",
-                $data[$i]
-            );
-        }
-        $this->db->table('pages')->insert($data);
+        $this->db->table('pages')->insertBatch($data);
     }
 }

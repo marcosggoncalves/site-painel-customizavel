@@ -67,6 +67,7 @@ class Email extends BaseController
         }
     }
     private function enviarEmail($email){
+        $headers = "MIME-Version: 1.1\r\n";
         
         $emailEnvio = $email['emailEnvio'];
         $headers.= "From: {$email["email"]} <{$email["email"]}>";

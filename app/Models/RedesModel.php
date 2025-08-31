@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class RedesModel extends Model
 {
-    protected $table = 'redessociais';
+    protected $table = 'redesSociais';
     protected $allowedFields = ['link_social','nome_social','icone_social'];
 
     public function getRedesSocias()
