@@ -1,4 +1,4 @@
-# Aplicação PHP - Painel administrativo SOS Máquinas
+# Aplicação PHP - Painel + Site customizável
 
 Framework Codegniter 4 + MYSQL + Jquery e Javascript.
 
